@@ -1,8 +1,8 @@
 {
-  "name": "Łowca Okazji - OLX Allegro",
+  "name": "Łowca Okazji - OLX i Allegro",
   "short_name": "Łowca",
-  "description": "Wyszukuje auta i przedmioty na OLX i Allegro Lokalnie 24/7",
-  "start_url": "./index.html",
+  "description": "Wyszukuje auta i okazje na OLX i Allegro Lokalnie 24/7",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#0a0a0a",
   "theme_color": "#ff3b30",

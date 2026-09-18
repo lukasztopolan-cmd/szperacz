@@ -1,56 +1,69 @@
-# Łowca Okazji - OLX + Allegro Lokalnie
+# Łowca Okazji FINAL - Naprawione błędy + Bot Telegram
 
-### Co to jest?
-Aplikacja PWA (działa jak natywna na iPhone/iPad/PC) + backend Python który 24/7 poluje na okazje i wysyła powiadomienia na Telegram w 60 sekund po wystawieniu.
+## Co naprawiono (Twoje błędy z Netlify):
 
-Stworzone dla wielu kategorii na raz - auta, elektronika, rowery, meble.
+### ❌ Było:
+- `/ikona-dotykowa.png 401` - polskie nazwy plików
+- `/indeks.html 401` - zła nazwa (powinno być index.html)
+- `/favicon.ico 404` - brak favicon
+- `start_url = "./index.html"` - problemy z PWA
 
-### Jak uruchomić w 2 minuty (wersja na PC)
+### ✅ Teraz:
+- Wszystkie pliki: `icon-192.png`, `icon-512.png`, `apple-touch-icon.png`, `favicon.ico` - angielskie nazwy, bez polskich znaków
+- `index.html` - poprawna nazwa
+- `manifest.json` - `start_url: "/"` - poprawne dla PWA
+- Dodano `netlify.toml` i `_redirects` - zero błędów 401/404
 
-1. Zainstaluj Python: https://www.python.org/downloads/
-2. W terminalu:
-```
+## Jak wrzucić na Netlify bez błędów:
+
+1. Pobierz folder `olx-hunter-FINAL` jako ZIP
+2. Wejdź na https://app.netlify.com/drop
+3. Przeciągnij ZIP na stronę
+4. Gotowe! Dostajesz link https://twoja-nazwa.netlify.app - 0 błędów
+
+## Bot Telegram - jak zabezpieczyć token:
+
+**WAŻNE:** Token ze screena `8827256269:AAHHFsWUrGUKyDSClhGbVdV0dMXa5NWZXis` jest PUBLICZNY!
+
+1. W Telegramie: @BotFather -> /mybots -> wybierz bota -> API Token -> Revoke current token
+2. Skopiuj NOWY token
+3. Wklej go w `backend.py` linia 18: `TELEGRAM_TOKEN = "NOWY_TOKEN"`
+4. Usuń screen z tokenem
+
+## Jak uruchomić backend (powiadomienia):
+
+### Na PC (test):
+```bash
 pip install requests beautifulsoup4 lxml
 python backend.py
 ```
-3. Edytuj `hunters.json` - dodaj swoje wyszukiwania
 
-### Jak podłączyć Telegram (30s)
+### Na serwerze 24/7 (Render.com - darmowe):
+1. Załóż konto na render.com
+2. New -> Background Worker -> podłącz repo lub wrzuć pliki
+3. Build command: `pip install requests beautifulsoup4 lxml`
+4. Start command: `python backend.py`
+5. Env var: `TELEGRAM_TOKEN = twój_token`
+6. Deploy
 
-1. W Telegramie znajdź @BotFather -> /newbot -> nazwij bota
-2. Skopiuj TOKEN
-3. Wklej w backend.py -> TELEGRAM_TOKEN
-4. Napisz cokolwiek do swojego bota
-5. Uruchom backend.py - wykryje chat_id automatycznie
+Backend automatycznie wykryje chat_id po tym jak napiszesz cokolwiek do bota.
 
-### Jak zainstalować jako aplikacja na iPhone
+## Nowe filtry dla aut:
 
-1. Otwórz index.html na hostingu lub lokalnie
-2. Kliknij Udostępnij (kwadrat ze strzałką) -> Dodaj do ekranu początkowego
-3. Masz ikonę jak normalna apka
+W apce teraz masz:
+- Marka (BMW, Audi, VW, Mercedes...)
+- Model
+- Rocznik od/do
+- Przebieg do
+- Paliwo (benzyna, diesel, LPG, hybryda, elektryczny)
+- Skrzynia (manual, automat)
+- Uszkodzony / nieuszkodzony
 
-### Jak wrzucić na darmowy hosting 24/7
+Wszystko działa z Telegramem - dostajesz powiadomienie w 90 sekund po wystawieniu.
 
-Najprostszy: Render.com
-- Załóż konto na render.com
-- New -> Background Worker -> podłącz to repo
-- Start command: python backend.py
-- Dodaj env var TELEGRAM_TOKEN
-- Gotowe, działa 24/7 za darmo (750h/mies)
+## Test bota:
 
-Alternatywy: Fly.io, Railway.app, Hetzner VPS 20zł/mies
+Po uruchomieniu backend.py wyśle Ci testową wiadomość:
+"TEST - BMW E90 320d 2008 - Twoj bot dziala! 🔥"
 
-### Koszty
-
-- Start: 0 zł
-- Domena (opcjonalnie): 50zł/rok
-- VPS gdy urośnie: 20-40zł/mies
-- Apple Developer (dopiero gdy chcesz App Store): 99$/rok
-
-### Co dalej?
-
-- Chcesz wersję natywną iOS? Ten sam backend, dorabiamy tylko apke w SwiftUI
-- Chcesz AI do oceny okazji? Mogę dodać analizę cen vs średnia rynkowa
-- Chcesz filtry: rocznik, przebieg, paliwo dla aut? Dodaję w 1h
-
-Autor: Agent Arena.ai
+Jeśli dostaniesz - wszystko działa.
