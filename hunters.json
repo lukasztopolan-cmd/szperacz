@@ -1,0 +1,31 @@
+[
+  {
+    "name": "BMW E90 do 15k Wrocław",
+    "portal": "both",
+    "keyword": "bmw e90",
+    "price_to": 15000,
+    "price_from": 3000,
+    "location": "wroclaw",
+    "radius": 100,
+    "active": true
+  },
+  {
+    "name": "iPhone 13/14 do 1800zł",
+    "portal": "olx",
+    "keyword": "iphone 13",
+    "price_to": 1800,
+    "price_from": 800,
+    "location": "wroclaw",
+    "radius": 50,
+    "active": true
+  },
+  {
+    "name": "Rower elektryczny do 4000",
+    "portal": "both",
+    "keyword": "rower elektryczny",
+    "price_to": 4000,
+    "location": "dolnoslaskie",
+    "radius": 0,
+    "active": true
+  }
+]

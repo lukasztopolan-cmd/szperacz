@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Łowca Okazji - OLX & Allegro</title>
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<style>
+  :root{--bg:#0a0a0a;--card:#1c1c1e;--card2:#2c2c2e;--accent:#ff3b30;--accent2:#ff453a;--text:#fff;--text2:#8e8e93;--green:#30d158;--blue:#0a84ff}
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display',sans-serif}
+  body{background:var(--bg);color:var(--text);padding-bottom:90px}
+  .header{padding:50px 20px 20px;position:sticky;top:0;background:rgba(10,10,10,0.85);backdrop-filter:blur(20px);z-index:10;border-bottom:1px solid #222}
+  .header h1{font-size:28px;font-weight:800;letter-spacing:-0.5px}
+  .header p{color:var(--text2);font-size:15px;margin-top:4px}
+  .status-bar{display:flex;gap:8px;margin-top:12px}
+  .pill{font-size:12px;padding:5px 10px;border-radius:20px;background:var(--card2);color:var(--text2);display:flex;align-items:center;gap:5px}
+  .pill.active{background:rgba(48,209,88,0.15);color:var(--green)}
+  .pill .dot{width:7px;height:7px;border-radius:50%;background:currentColor;animation:pulse 1.5s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+  .container{padding:16px}
+  .card{background:var(--card);border-radius:16px;padding:16px;margin-bottom:12px;border:1px solid #222}
+  .card-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+  .card-title{font-weight:700;font-size:17px}
+  .badge{font-size:11px;padding:4px 8px;border-radius:6px;font-weight:600}
+  .badge-olx{background:#002f34;color:#23e5db}
+  .badge-allegro{background:#ff5a00;color:white}
+  .badge-both{background:var(--blue);color:white}
+  .search-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .field{display:flex;flex-direction:column;gap:6px}
+  .field.full{grid-column:1 / -1}
+  .field label{font-size:12px;color:var(--text2);text-transform:uppercase;letter-spacing:0.5px;font-weight:600}
+  .field input,.field select{background:var(--card2);border:1px solid #333;color:white;padding:12px;border-radius:10px;font-size:15px;outline:none;width:100%}
+  .field input:focus,.field select:focus{border-color:var(--accent)}
+  .btn{width:100%;padding:15px;border:none;border-radius:12px;font-weight:700;font-size:16px;cursor:pointer;transition:0.2s}
+  .btn-primary{background:var(--accent);color:white}
+  .btn-primary:active{transform:scale(0.98);background:var(--accent2)}
+  .btn-secondary{background:var(--card2);color:white}
+  .hunters{margin-top:20px}
+  .hunter-item{display:flex;align-items:center;justify-content:space-between;padding:14px;background:var(--card);border-radius:12px;margin-bottom:8px;border-left:3px solid var(--accent)}
+  .hunter-info h4{font-size:15px}
+  .hunter-info p{font-size:12px;color:var(--text2);margin-top:2px}
+  .hunter-actions{display:flex;gap:8px}
+  .icon-btn{width:32px;height:32px;border-radius:8px;background:var(--card2);border:none;color:var(--text2);display:grid;place-items:center;cursor:pointer}
+  .offers{margin-top:24px}
+  .offer-card{display:flex;gap:12px;background:var(--card);border-radius:16px;padding:12px;margin-bottom:10px;border:1px solid #222;position:relative;overflow:hidden}
+  .offer-card.new::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--green)}
+  .offer-img{width:80px;height:80px;border-radius:10px;background:var(--card2);object-fit:cover;flex-shrink:0}
+  .offer-content{flex:1;min-width:0}
+  .offer-title{font-size:15px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .offer-price{font-size:17px;font-weight:800;margin-top:2px}
+  .offer-meta{font-size:12px;color:var(--text2);margin-top:4px;display:flex;gap:8px}
+  .offer-time{font-size:11px;color:var(--green);font-weight:600;margin-top:4px}
+  .tabbar{position:fixed;bottom:0;left:0;right:0;background:rgba(28,28,30,0.9);backdrop-filter:blur(20px);border-top:1px solid #333;display:flex;justify-content:space-around;padding:8px 0 24px}
+  .tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;color:var(--text2);font-size:10px;font-weight:500;cursor:pointer}
+  .tab.active{color:var(--accent)}
+  .tab i{font-size:22px;font-style:normal}
+  .setup{background:linear-gradient(135deg,#ff3b30,#ff6b30);border-radius:16px;padding:16px;margin-bottom:16px}
+  .setup h3{font-size:16px;margin-bottom:6px}
+  .setup p{font-size:13px;opacity:0.9;line-height:1.4}
+  .setup code{background:rgba(0,0,0,0.3);padding:2px 6px;border-radius:4px;font-size:12px}
+  .empty{text-align:center;padding:40px 20px;color:var(--text2)}
+  .empty span{font-size:40px;display:block;margin-bottom:10px}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>Łowca Okazji 🔍</h1>
+  <p>Poluje na OLX i Allegro Lokalnie 24/7</p>
+  <div class="status-bar">
+    <div class="pill active"><div class="dot"></div> Skaner aktywny</div>
+    <div class="pill">⏱ co 2 min</div>
+    <div class="pill">📱 Telegram OK</div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="setup">
+    <h3>⚡️ Jak to działa teraz?</h3>
+    <p>To jest PWA. Backend w Pythonie (backend.py) co 2 min sprawdza OLX/Allegro. Jak znajdzie - leci powiadomienie na Twój Telegram. Na dole masz instrukcję jak podłączyć bota w 30 sekund.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">+ Nowy łowca</span>
+      <span class="badge badge-both">WIELE KATEGORII</span>
+    </div>
+    <div class="search-grid">
+      <div class="field full">
+        <label>Nazwa (dla Ciebie)</label>
+        <input id="name" placeholder='np. "BMW do 15k Wrocław"'>
+      </div>
+      <div class="field">
+        <label>Portal</label>
+        <select id="portal">
+          <option value="both">OLX + Allegro Lokalnie</option>
+          <option value="olx">Tylko OLX</option>
+          <option value="allegro">Tylko Allegro Lokalnie</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Słowo kluczowe</label>
+        <input id="keyword" placeholder="np. bmw e90, iphone 13">
+      </div>
+      <div class="field">
+        <label>Cena do</label>
+        <input id="priceTo" type="number" placeholder="15000">
+      </div>
+      <div class="field">
+        <label>Cena od (opcjonalnie)</label>
+        <input id="priceFrom" type="number" placeholder="5000">
+      </div>
+      <div class="field">
+        <label>Lokalizacja</label>
+        <input id="location" placeholder="Wrocław">
+      </div>
+      <div class="field">
+        <label>Promień</label>
+        <select id="radius">
+          <option value="0">Cała Polska</option>
+          <option value="15">+15 km</option>
+          <option value="30">+30 km</option>
+          <option value="50">+50 km</option>
+          <option value="100" selected>+100 km</option>
+          <option value="200">+200 km</option>
+        </select>
+      </div>
+    </div>
+    <button class="btn btn-primary" style="margin-top:16px" onclick="addHunter()">🚀 Uruchom łowcę + Telegram</button>
+  </div>
+
+  <div class="hunters">
+    <h3 style="margin-bottom:10px;font-size:18px">Twoi aktywni łowcy (3)</h3>
+    <div id="huntersList"></div>
+  </div>
+
+  <div class="offers">
+    <h3 style="margin-bottom:10px;font-size:18px">Ostatnio upolowane 🔥</h3>
+    <div id="offersList"></div>
+  </div>
+
+  <div class="card" style="margin-top:24px">
+    <div class="card-header"><span class="card-title">📲 Konfiguracja Telegram (30s)</span></div>
+    <ol style="padding-left:18px;color:#ccc;font-size:14px;line-height:1.6">
+      <li>Otwórz Telegram i znajdź <code>@BotFather</code></li>
+      <li>Wyślij <code>/newbot</code> -> nazwij go np. <code>LowcaOkazjiBot</code></li>
+      <li>Skopiuj TOKEN który Ci da (wygląda jak <code>123456:AAH...</code>)</li>
+      <li>Wklej go w pliku <code>backend.py</code> w linijce <code>TELEGRAM_TOKEN</code></li>
+      <li>Napisz cokolwiek do swojego bota, a potem uruchom backend.py - sam wykryje Twoje chat_id</li>
+      <li>Gotowe! Dostajesz powiadomienia w 60 sekund po wystawieniu.</li>
+    </ol>
+    <div style="margin-top:12px;padding:10px;background:#111;border-radius:8px;font-size:12px;color:var(--text2)">
+      💡 <b>Dlaczego Telegram a nie zwykły PUSH?</b><br>
+      Telegram jest darmowy, niezawodny i przechodzi przez tryb "Nie przeszkadzać". Możesz też dodać żonę/wspólnika do powiadomień. Na PWA PUSH też da się zrobić, ale Telegram jest 10x szybszy do wdrożenia.
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header"><span class="card-title">💰 Co musisz opłacić?</span></div>
+    <div style="font-size:14px;line-height:1.6;color:#ccc">
+      <b style="color:white">Na start: 0 zł</b><br>
+      - Ten prototyp działa lokalnie na Twoim PC<br>
+      - Hosting darmowy: Render.com / Fly.io (750h/mies free)<br>
+      - Domena opcjonalna: ~50zł/rok na ovh.pl<br><br>
+      <b style="color:white">Gdy urośnie (100+ łowców):</b><br>
+      - VPS: ~20-40zł/mies (Hetzner, OVH)<br>
+      - To wszystko. Brak prowizji od OLX/Allegro.<br><br>
+      <b style="color:white">Gdy będziesz chciał iOS App Store:</b><br>
+      - Apple Developer: 99$/rok<br>
+      - + ten sam serwer co wyżej<br>
+      - Moja robocizna: wtedy rozbudowujemy ten sam backend, więc dodajesz tylko frontend iOS.
+    </div>
+  </div>
+</div>
+
+<div class="tabbar">
+  <div class="tab active"><i>🔍</i>Łowcy</div>
+  <div class="tab"><i>🔥</i>Okazje</div>
+  <div class="tab"><i>⭐</i>Ulubione</div>
+  <div class="tab"><i>⚙️</i>Ustawienia</div>
+</div>
+
+<div id="installBox" style="display:none;position:fixed;bottom:90px;left:16px;right:16px;background:#1c1c1e;border:1px solid #ff3b30;border-radius:16px;padding:16px;z-index:100;box-shadow:0 10px 30px rgba(0,0,0,0.5)">
+  <div style="display:flex;gap:12px;align-items:center">
+    <img src="icon-192.png" style="width:48px;height:48px;border-radius:10px">
+    <div style="flex:1">
+      <div style="font-weight:700">Zainstaluj jako aplikację 📲</div>
+      <div style="font-size:13px;color:#8e8e93;margin-top:2px">Będzie działać jak normalna apka na iPhonie</div>
+    </div>
+    <button onclick="installPWA()" style="background:#ff3b30;color:white;border:none;padding:10px 16px;border-radius:10px;font-weight:700">Instaluj</button>
+  </div>
+  <button onclick="document.getElementById('installBox').style.display='none'" style="position:absolute;top:8px;right:12px;background:none;border:none;color:#8e8e93;font-size:18px">✕</button>
+</div>
+
+<script src="app.js"></script>
+<script>
+  let deferredPrompt;
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    document.getElementById('installBox').style.display='block';
+  });
+  async function installPWA(){
+    if(deferredPrompt){
+      deferredPrompt.prompt();
+      const {outcome} = await deferredPrompt.userChoice;
+      deferredPrompt=null;
+      document.getElementById('installBox').style.display='none';
+    } else {
+      // iOS instruction
+      alert('Na iPhonie:\n1. Kliknij ikonę Udostępnij na dole (kwadrat ze strzałką)\n2. Przewiń w dół i wybierz "Dodaj do ekranu początkowego"\n3. Kliknij Dodaj');
+    }
+  }
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js');
+  }
+  // iOS detection - show manual instruction after 3 sec if not standalone
+  setTimeout(()=>{
+    const isStandalone = window.navigator.standalone || window.matchMedia('(display-mode: standalone)').matches;
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    if(isIOS && !isStandalone && !deferredPrompt){
+      document.getElementById('installBox').style.display='block';
+    }
+  },3000);
+</script>
+</body>
+</html>
