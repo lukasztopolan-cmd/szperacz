@@ -1,0 +1,40 @@
+[
+  {
+    "name": "BMW E90 diesel do 15k Wrocław",
+    "portal": "both",
+    "keyword": "bmw e90",
+    "price_to": 15000,
+    "price_from": 3000,
+    "location": "wroclaw",
+    "radius": 100,
+    "brand": "BMW",
+    "fuel": "diesel",
+    "year_from": 2005,
+    "year_to": 2012,
+    "active": true,
+    "hits": 0
+  },
+  {
+    "name": "Auta uszkodzone do 10k - okazje",
+    "portal": "both",
+    "keyword": "uszkodzony",
+    "price_to": 10000,
+    "price_from": 1000,
+    "location": "dolnoslaskie",
+    "radius": 0,
+    "damaged": "yes",
+    "active": true,
+    "hits": 0
+  },
+  {
+    "name": "iPhone 13/14 do 1800 Wrocław",
+    "portal": "olx",
+    "keyword": "iphone 13",
+    "price_to": 1800,
+    "price_from": 800,
+    "location": "wroclaw",
+    "radius": 50,
+    "active": true,
+    "hits": 0
+  }
+]
