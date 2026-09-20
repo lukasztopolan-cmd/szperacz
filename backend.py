@@ -26,7 +26,7 @@ from datetime import datetime
 # Token jest pobierany z ENV (Render.com) lub z tego pliku
 # Na Render.com ustaw: TELEGRAM_TOKEN = twój_nowy_token
 # Lokalnie - wklej poniżej
-TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN", "WKLEJ_TUTAJ_NOWY_TOKEN_PO_REVOKE")  # <-- ZMIEŃ NA NOWY PO REVOKE!
+TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN", "8857295028:AAFCim_5LXBNOhuaToNqUlTMvhy9Qk3BBCU")  # <-- ZMIEŃ NA NOWY PO REVOKE!
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")  # opcjonalnie, wykryje automatycznie
 
 # Jeśli token to nadal placeholder, spróbuj wczytać z pliku .env
