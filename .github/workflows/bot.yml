@@ -1,1 +1,67 @@
+name: Lowca Okazji Bot
 
+on:
+  schedule:
+    - cron: '*/5 * * * *'   # co 5 minut
+  workflow_dispatch:        # reczny przycisk Run workflow
+
+permissions:
+  contents: write
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4 lxml
+
+      - name: Run bot (one check)
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          python - <<'PYEOF'
+          import json
+          from datetime import datetime
+          from backend import load_json, save_json, search_olx, search_allegro_lokalnie, send_telegram
+
+          hunters = load_json('hunters.json', [])
+          seen = load_json('seen_offers.json', {})
+          print(f'Sprawdzam {len(hunters)} lowcow...')
+
+          for hunter in hunters:
+              if not hunter.get('active', True):
+                  continue
+              print(f"-- {hunter['name']} --")
+              offers = []
+              if hunter.get('portal') in ('olx', 'both'):
+                  offers.extend(search_olx(hunter))
+              if hunter.get('portal') in ('allegro', 'both'):
+                  offers.extend(search_allegro_lokalnie(hunter))
+
+              new = 0
+              for offer in offers:
+                  if offer['id'] not in seen:
+                      seen[offer['id']] = datetime.now().isoformat()
+                      if send_telegram(offer, hunter['name']):
+                          new += 1
+              print(f"Znalezionych: {len(offers)}, nowych: {new}")
+
+          save_json('seen_offers.json', seen)
+          print('Done')
+          PYEOF
+
+      - name: Save seen offers
+        run: |
+          git config --local user.email "bot@lowca.com"
+          git config --local user.name "Lowca Bot"
+          git add seen_offers.json || true
+          git diff --staged --quiet || git commit -m "Update seen offers [skip ci]" || true
+          git push || true
