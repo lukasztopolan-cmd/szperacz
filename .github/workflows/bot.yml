@@ -24,8 +24,8 @@ jobs:
 
       - name: Run bot (one check)
         env:
-          TELEGRAM_TOKEN: ${{ secrets.AAH-Y_exmCo85kpYI4pKVStF4blGwj_A5AE }}
-          TELEGRAM_CHAT_ID: ${{ secrets.8857295028 }}
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: |
           python - <<'PYEOF'
           import json
