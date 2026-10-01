@@ -20,7 +20,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install requests beautifulsoup4 lxml
+        run: pip install requests beautifulsoup4 lxml curl_cffi
 
       - name: Run bot (one check)
         env:
@@ -34,6 +34,7 @@ jobs:
 
           hunters = load_json('hunters.json', [])
           seen = load_json('seen_offers.json', {})
+          dump = []
           print(f'Sprawdzam {len(hunters)} lowcow...')
 
           for hunter in hunters:
@@ -48,6 +49,7 @@ jobs:
 
               new = 0
               for offer in offers:
+                  dump.append(offer)
                   if offer['id'] not in seen:
                       seen[offer['id']] = datetime.now().isoformat()
                       if send_telegram(offer, hunter['name']):
@@ -55,6 +57,8 @@ jobs:
               print(f"Znalezionych: {len(offers)}, nowych: {new}")
 
           save_json('seen_offers.json', seen)
+          save_json('offers.json', dump[:40])
+          print(f'Zapisano offers.json: {len(dump[:40])} ofert')
           print('Done')
           PYEOF
 
@@ -62,6 +66,6 @@ jobs:
         run: |
           git config --local user.email "bot@lowca.com"
           git config --local user.name "Lowca Bot"
-          git add seen_offers.json || true
+          git add seen_offers.json offers.json || true
           git diff --staged --quiet || git commit -m "Update seen offers [skip ci]" || true
           git push || true
