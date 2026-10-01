@@ -22,6 +22,23 @@ import os
 import re
 from datetime import datetime
 
+# curl_cffi omija blokade anty-botowa OLX (odcisk TLS przegladarki)
+try:
+    from curl_cffi import requests as curl_requests
+    HAS_CURL_CFFI = True
+except Exception:
+    curl_requests = None
+    HAS_CURL_CFFI = False
+
+def fetch(url):
+    """Pobiera strone: curl_cffi (Safari TLS) jesli dostepny, inaczej requests."""
+    if HAS_CURL_CFFI:
+        try:
+            return curl_requests.get(url, impersonate="safari", headers=HEADERS, timeout=20)
+        except Exception as e:
+            print(f"⚠️ curl_cffi: {e}, probuje requests...")
+    return requests.get(url, headers=HEADERS, timeout=20)
+
 # ========== KONFIGURACJA ==========
 # Token jest pobierany z ENV (Render.com) lub z tego pliku
 # Na Render.com ustaw: TELEGRAM_TOKEN = twój_nowy_token
@@ -200,7 +217,7 @@ def search_olx(hunter):
             url += "?" + "&".join(params)
 
         print(f"🔍 OLX: {hunter['name']} -> {url[:80]}")
-        r = requests.get(url, headers=HEADERS, timeout=20)
+        r = fetch(url)
         if r.status_code != 200:
             print(f"⚠️ OLX status {r.status_code}")
             return offers
@@ -210,10 +227,14 @@ def search_olx(hunter):
 
         for card in cards[:12]:
             try:
-                title_el = card.select_one('h6') or card.select_one('[data-cy="ad-card-title"]')
+                title_el = (card.select_one('[data-testid="card-title-link"]')
+                            or card.select_one('h6')
+                            or card.select_one('h4')
+                            or card.select_one('[data-cy="ad-card-title"]'))
                 price_el = card.select_one('[data-testid="ad-price"]')
-                link_el = card.select_one('a')
-                loc_el = card.select_one('[data-testid="location-date"]')
+                link_el = card.select_one('[data-testid="card-title-link"]') or card.select_one('a')
+                loc_el = (card.select_one('[data-testid="location-date"]')
+                          or card.select_one('[data-cy="location-date"]'))
                 img_el = card.select_one('img')
 
                 if not title_el or not link_el:
