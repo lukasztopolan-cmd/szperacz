@@ -2,125 +2,395 @@
 <html lang="pl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Łowca Okazji - OLX & Allegro LIVE</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0a0a0a">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<title>Łowca Okazji PRO - OLX & Allegro</title>
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:#0a0a0a;color:#fff;font-family:-apple-system,BlinkMacSystemFont,sans-serif;max-width:600px;margin:0 auto;padding:12px;padding-bottom:90px}
-.card{background:#1c1c1e;border:1px solid #2c2c2e;border-radius:14px;padding:14px;margin-bottom:12px}
-h1{font-size:19px}h3{font-size:14px;margin-bottom:8px}
-label{font-size:10px;color:#888;text-transform:uppercase;font-weight:700;display:block;margin:8px 0 4px}
-input,select{width:100%;background:#2c2c2e;border:1px solid #3a3a3c;color:#fff;padding:11px;border-radius:10px;font-size:14px}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.btn{display:block;text-align:center;padding:14px;border-radius:12px;font-weight:800;font-size:14px;text-decoration:none;border:none;width:100%;cursor:pointer}
-.btn-red{background:#ff3b30;color:#fff}.btn-blue{background:#0a84ff;color:#fff}.btn-green{background:#30d158;color:#000}.btn-dark{background:#2c2c2e;color:#fff}
-.offer{display:block;background:#1c1c1e;border:1px solid #333;border-radius:12px;padding:11px;margin:8px 0;text-decoration:none;color:#fff}
-.offer:active{border-color:#ff3b30;background:#2a1a1a}
-.offer-title{font-size:13px;font-weight:700;line-height:1.3}.offer-price{font-size:16px;font-weight:800;color:#30d158;margin-top:4px}.offer-meta{font-size:11px;color:#888;margin-top:4px}
-.badge{font-size:9px;padding:3px 7px;border-radius:5px;font-weight:800;display:inline-block}.badge-olx{background:#002f34;color:#23e5db}.badge-allegro{background:#ff5a00;color:#fff}
-.tabs{position:fixed;bottom:0;left:0;right:0;background:#1c1c1e;border-top:1px solid #333;display:flex;justify-content:space-around;padding:8px 0;max-width:600px;margin:0 auto}
-.tab{flex:1;text-align:center;font-size:10px;color:#888;text-decoration:none;padding:4px}.tab.active{color:#0a84ff}.tab span{font-size:20px;display:block}
-.link-box{background:#111;border:1px dashed #444;border-radius:10px;padding:10px;margin-top:10px;display:none}
-.link-box a{display:block;margin:6px 0;padding:10px;background:#2c2c2e;border-radius:8px;color:#0a84ff;text-decoration:none;font-size:13px;font-weight:600;text-align:center}
-#status{font-size:11px;color:#30d158;text-align:center;margin:6px 0}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0a0a0a;color:#fff;padding-bottom:70px}
+header{position:sticky;top:0;background:rgba(10,10,10,.95);backdrop-filter:blur(10px);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #222;z-index:50}
+header h1{font-size:17px;font-weight:700}
+header h1 span{color:#ff3b30}
+.hdr-btns{display:flex;gap:8px}
+.chip{background:#1c1c1e;border:1px solid #333;border-radius:20px;padding:6px 12px;font-size:13px;color:#fff;text-decoration:none;display:inline-block}
+.chip:active{background:#333}
+section{padding:14px 16px}
+h2{font-size:15px;margin-bottom:10px;color:#eee}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+label{font-size:11px;color:#999;display:block;margin-bottom:3px}
+select,input{width:100%;background:#1c1c1e;border:1px solid #333;border-radius:10px;color:#fff;padding:10px;font-size:15px;appearance:none;-webkit-appearance:none}
+select:focus,input:focus{border-color:#ff3b30;outline:none}
+.btnrow{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.btn{display:block;text-align:center;border-radius:12px;padding:13px;font-size:15px;font-weight:700;text-decoration:none;border:none;color:#fff;cursor:pointer}
+.btn.olx{background:#002f6d}.btn.alg{background:#b34700}.btn.de{background:#1d6b1d}.btn.at{background:#00568c}.btn.both{background:#ff3b30;grid-column:1/-1}
+.btn.small{padding:10px;font-size:13px;background:#1c1c1e;border:1px solid #333}
+.btn:active{opacity:.7}
+#linksBox{display:none;margin-top:10px;background:#10241a;border:1px solid #1f5c3a;border-radius:12px;padding:10px}
+#linksBox a{display:block;background:#173d2a;border-radius:8px;padding:10px;margin:4px 0;color:#7ee2a8;text-decoration:none;font-size:14px;font-weight:600}
+#status{margin-top:10px;font-size:12px;color:#8e8e93;min-height:16px}
+.offers{display:grid;grid-template-columns:1fr;gap:10px}
+.offer{background:#1c1c1e;border:1px solid #2c2c2e;border-radius:14px;overflow:hidden;position:relative}
+.offer a.main{display:block;text-decoration:none;color:#fff}
+.offer img{width:100%;height:150px;object-fit:cover;display:block;background:#222}
+.offer .body{padding:10px 12px 12px}
+.offer .title{font-size:14px;font-weight:600;line-height:1.3}
+.offer .price{font-size:17px;font-weight:800;color:#ff453a;margin-top:4px}
+.offer .meta{font-size:12px;color:#98989d;margin-top:4px}
+.offer .badges{display:flex;gap:6px;margin-top:6px;flex-wrap:wrap}
+.badge{background:#2c2c2e;border-radius:6px;padding:3px 7px;font-size:11px;color:#d1d1d6}
+.badge.dist{background:#0e3a2a;color:#7ee2a8;font-weight:700}
+.badge.portal{background:#002f6d;color:#9ec5ff}
+.badge.portal.al{background:#b34700;color:#ffd6b3}
+.eye{position:absolute;top:8px;right:8px;background:rgba(0,0,0,.65);border:1px solid #444;color:#fff;border-radius:20px;padding:7px 12px;font-size:13px;z-index:2}
+.eye:active{background:#ff3b30}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:100;overflow-y:auto}
+.modal.open{display:block}
+.modal .card{background:#1c1c1e;margin:20px auto;max-width:520px;border-radius:18px;overflow:hidden;border:1px solid #333}
+.modal img{width:100%;height:230px;object-fit:cover;display:block}
+.modal .body{padding:16px}
+.modal .title{font-size:17px;font-weight:700}
+.modal .price{font-size:22px;font-weight:800;color:#ff453a;margin:6px 0}
+.modal .meta{font-size:13px;color:#98989d;line-height:1.6}
+.modal .btns{display:grid;gap:8px;margin-top:14px}
+.modal .btn{padding:12px}
+nav{position:fixed;bottom:0;left:0;right:0;background:rgba(20,20,20,.97);backdrop-filter:blur(10px);display:flex;border-top:1px solid #222;z-index:60}
+nav a{flex:1;text-align:center;padding:10px 0 14px;font-size:11px;color:#8e8e93;text-decoration:none}
+nav a.on{color:#ff3b30}
 </style>
 </head>
 <body>
-<h1>🔍 Łowca Okazji <span style="font-size:11px;background:#30d158;color:#000;padding:2px 6px;border-radius:4px">LIVE FIX</span></h1>
-<p style="font-size:11px;color:#888;margin:4px 0 10px">32 marki • Prywatny/Firma • Telegram co 5min • 100% klika się</p>
+<header>
+  <h1>🔍 Łowca <span>Okazji PRO</span></h1>
+  <div class="hdr-btns">
+    <button class="chip" id="soundBtn" onclick="toggleSound()">🔔</button>
+    <button class="chip" id="gpsBtn" onclick="useGps()">📍 GPS</button>
+  </div>
+</header>
 
-<div id="status">✅ Wersja bezpieczna - bez crasha localStorage</div>
+<section id="szukaj">
+  <h2>🔍 SZUKAJ — OLX / Allegro / 🇩 Kleinanzeigen / 🇦 willhaben</h2>
+  <div class="grid">
+    <div><label>Marka</label><select id="brand" onchange="onBrand()"></select></div>
+    <div><label>Model</label><select id="model"></select></div>
+    <div><label>Sprzedawca</label>
+      <select id="seller"><option value="all">Wszyscy</option><option value="private">👤 Prywatny</option><option value="business">🏢 Firma</option></select></div>
+    <div><label>Skrzynia biegów</label>
+      <select id="gearbox"><option value="all">Wszystkie</option><option value="manual">🕹️ Manualna</option><option value="automatic">⚙️ Automatyczna</option></select></div>
+    <div><label>Cena od (zł)</label><input id="pfrom" type="number" inputmode="numeric" placeholder="3000"></div>
+    <div><label>Cena do (zł)</label><input id="pto" type="number" inputmode="numeric" placeholder="15000"></div>
+    <div><label>Promień (km)</label>
+      <select id="radius"><option value="">cała Polska</option><option value="25">25 km</option><option value="50">50 km</option><option value="100" selected>100 km</option><option value="200">200 km</option></select></div>
+    <div><label>&nbsp;</label><div style="font-size:11px;color:#666;padding:10px 2px">Promień działa z GPS przy ofertach</div></div>
+    <div style="grid-column:1/-1"><label>📍 Lokalizacja (miasto w URL, np. wroclaw)</label><input id="city" placeholder="wroclaw" value="wroclaw"></div>
+  </div>
+  <div class="btnrow">
+    <a class="btn olx" id="olxLink" href="https://www.olx.pl/d/oferty/q-bmw-e90/wroclaw/" target="_blank" rel="noopener">🔵 OLX</a>
+    <a class="btn alg" id="algLink" href="https://allegrolokalnie.pl/oferty/q/bmw%20e90" target="_blank" rel="noopener">🟠 ALLEGRO</a>
+    <a class="btn de" id="deLink" href="https://www.kleinanzeigen.de/s-bmw-e90/k0" target="_blank" rel="noopener">🇩 KLEINANZEIGEN</a>
+    <a class="btn at" id="atLink" href="https://www.willhaben.at/iad/kaufen-und-verkaufen/marktplatz?keyword=bmw+e90" target="_blank" rel="noopener">🇦 WILLHABEN</a>
+    <button class="btn both" onclick="searchAll()">🔍 SZUKAJ NA WSZYSTKICH (4 zakładki)</button>
+  </div>
+  <div id="linksBox">
+    <div style="font-size:12px;color:#7ee2a8;margin-bottom:4px">Safari zablokowało zakładki? Kliknij:</div>
+    <div id="linksInner"></div>
+  </div>
+  <div id="status"></div>
+</section>
 
-<div class="card">
-<h3>🔍 SZUKAJ TERAZ (prawdziwy OLX/Allegro)</h3>
-<div class="grid2">
-<div><label>Marka / Słowo</label><select id="brand"><option value="bmw-e90">BMW E90</option><option value="bmw">BMW wszystkie</option><option value="audi-a4">Audi A4</option><option value="audi">Audi wszystkie</option><option value="volkswagen-golf">VW Golf</option><option value="volkswagen-passat">VW Passat</option><option value="opel-astra">Opel Astra</option><option value="ford-focus">Ford Focus</option><option value="toyota-corolla">Toyota Corolla</option><option value="skoda-octavia">Skoda Octavia</option><option value="mercedes-c-klasa">Mercedes C</option><option value="bmw-seria-3">BMW Seria 3</option><option value="audi-a6">Audi A6</option><option value="peugeot-308">Peugeot 308</option><option value="renault-megane">Renault Megane</option><option value="fiat-500">Fiat 500</option><option value="hyundai-i30">Hyundai i30</option><option value="kia-ceed">Kia Ceed</option><option value="mazda-3">Mazda 3</option><option value="honda-civic">Honda Civic</option><option value="seat-leon">Seat Leon</option><option value="ford-mondeo">Ford Mondeo</option><option value="opel-corsa">Opel Corsa</option><option value="nissan-qashqai">Nissan Qashqai</option><option value="volvo-v50">Volvo V50</option><option value="citroen-c4">Citroen C4</option><option value="dacia-duster">Dacia Duster</option><option value="suzuki-swift">Suzuki Swift</option><option value="alfa-romeo-159">Alfa 159</option><option value="lexus-is">Lexus IS</option><option value="subaru-impreza">Subaru Impreza</option><option value="mitsubishi-lancer">Mitsubishi Lancer</option><option value="iphone-13">iPhone 13</option><option value="rower-elektryczny">Rower elektryczny</option></select></div>
-<div><label>Sprzedawca</label><select id="seller"><option value="">Wszyscy</option><option value="private">👤 Prywatny</option><option value="business">🏢 Firma</option></select></div>
-</div>
-<div class="grid2"><div><label>Cena od</label><input id="priceFrom" type="number" placeholder="3000" value="3000"></div><div><label>Cena do</label><input id="priceTo" type="number" placeholder="15000" value="15000"></div></div>
-<label>Lokalizacja</label><input id="location" placeholder="wroclaw, dolnoslaskie" value="wroclaw">
-<div style="margin-top:12px" class="grid2">
-<a id="olxLink" class="btn btn-red" href="https://www.olx.pl/d/oferty/q-bmw-e90/" target="_blank">🔵 OLX</a>
-<a id="allegroLink" class="btn btn-blue" href="https://allegrolokalnie.pl/oferty/q/bmw%20e90" target="_blank">🟠 ALLEGRO</a>
-</div>
-<button class="btn btn-dark" style="margin-top:8px" onclick="searchBoth()">🔍 SZUKAJ W OBU (otwórz 2 zakładki)</button>
-<div id="linksBox" class="link-box"><div style="font-size:11px;color:#888;margin-bottom:6px;text-align:center">Jeśli Safari zablokowało popup, kliknij poniżej:</div><div id="searchLinks"></div></div>
+<section id="oferty">
+  <h2>🔥 Oferty — kliknij kartę aby otworzyć, 👁 podgląd</h2>
+  <div class="btnrow" style="margin:0 0 10px">
+    <button class="btn small" onclick="loadReal()">📥 Pobierz prawdziwe oferty</button>
+    <button class="btn small" onclick="beep()">🔊 Test dźwięku</button>
+  </div>
+  <div class="offers" id="offersGrid"></div>
+</section>
+
+<section id="bot">
+  <h2>🤖 Bot Telegram</h2>
+  <div style="font-size:13px;color:#98989d;line-height:1.6">Bot sprawdza OLX/Allegro co 5 min i wysyła nowe okazje na Telegram. Stan: GitHub → Actions → <b>Lowca Okazji Bot</b>.</div>
+  <div class="btnrow">
+    <a class="btn small" href="https://github.com/lukasztopolan-cmd/szperacz/actions" target="_blank" rel="noopener">▶️ Actions</a>
+    <a class="btn small" href="https://t.me/BotFather" target="_blank" rel="noopener">🤖 BotFather</a>
+  </div>
+</section>
+
+<div class="modal" id="modal">
+  <div class="card">
+    <img id="mImg" src="" alt="">
+    <div class="body">
+      <div class="title" id="mTitle"></div>
+      <div class="price" id="mPrice"></div>
+      <div class="meta" id="mMeta"></div>
+      <div class="btns">
+        <a class="btn olx" id="mOpen" href="#" target="_blank" rel="noopener">👁️ OTWÓRZ OGŁOSZENIE</a>
+        <button class="btn small" onclick="shareOffer()">📤 Udostępnij</button>
+        <button class="btn both" onclick="closeModal()">✖ Zamknij</button>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div class="card">
-<h3>🔥 Ogłoszenia - KLIKNIJ aby otworzyć (6 live)</h3>
-<div id="offersList">
-<a class="offer" href="https://www.olx.pl/d/oferty/q-bmw-e90/" target="_blank"><div><span class="badge badge-olx">OLX</span> <span style="font-size:10px;color:#30d158">• 2 min • Wrocław</span></div><div class="offer-title">BMW E90 320d 2008r 230kkm - Okazja! Nieuszkodzony</div><div class="offer-price">13 900 zł</div><div class="offer-meta">📍 Wrocław, Fabryczna • 2008 • 230kkm • Diesel • 👤 Prywatny</div><div style="margin-top:7px;background:#ff3b30;color:#fff;padding:7px;border-radius:7px;font-size:11px;font-weight:800;text-align:center">👁️ OTWÓRZ NA OLX →</div></a>
-<a class="offer" href="https://www.olx.pl/d/oferty/q-bmw-e90/search%5Bprivate_business%5D=private/" target="_blank"><div><span class="badge badge-olx">OLX</span> <span style="font-size:10px;color:#0a84ff">• Tylko prywatny</span></div><div class="offer-title">BMW E90 318i 2006 - prywatny, zadbany</div><div class="offer-price">11 500 zł</div><div class="offer-meta">📍 Wrocław, Krzyki • Benzyna • 👤 Prywatny</div><div style="margin-top:7px;background:#0a84ff;color:#fff;padding:7px;border-radius:7px;font-size:11px;font-weight:800;text-align:center">👤 PRYWATNY - KLIKNIJ →</div></a>
-<a class="offer" href="https://www.olx.pl/d/oferty/q-audi-a4/" target="_blank"><div><span class="badge badge-olx">OLX</span></div><div class="offer-title">Audi A4 B8 2.0 TDI 2010 okazja</div><div class="offer-price">18 900 zł</div><div class="offer-meta">📍 Wrocław, Psie Pole • Diesel</div><div style="margin-top:7px;background:#ff3b30;color:#fff;padding:7px;border-radius:7px;font-size:11px;font-weight:800;text-align:center">OTWÓRZ →</div></a>
-<a class="offer" href="https://allegrolokalnie.pl/oferty/q/bmw%20e90" target="_blank"><div><span class="badge badge-allegro">Allegro Lokalnie</span></div><div class="offer-title">BMW E90 na Allegro Lokalnie</div><div class="offer-price">od 9 900 zł</div><div class="offer-meta">📍 Dolnośląskie</div><div style="margin-top:7px;background:#ff5a00;color:#fff;padding:7px;border-radius:7px;font-size:11px;font-weight:800;text-align:center">OTWÓRZ NA ALLEGRO →</div></a>
-<a class="offer" href="https://www.olx.pl/d/oferty/q-iphone-13/" target="_blank"><div><span class="badge badge-olx">OLX</span></div><div class="offer-title">iPhone 13 128GB - wiele ofert</div><div class="offer-price">od 1 500 zł</div><div class="offer-meta">📍 Cała Polska</div><div style="margin-top:7px;background:#ff3b30;color:#fff;padding:7px;border-radius:7px;font-size:11px;font-weight:800;text-align:center">OTWÓRZ →</div></a>
-<a class="offer" href="https://www.olx.pl/" target="_blank"><div><span class="badge badge-olx">OLX</span></div><div class="offer-title">OLX.pl - Strona główna</div><div class="offer-price">Test linków</div><div class="offer-meta">Jeśli to działa, wszystko działa</div><div style="margin-top:7px;background:#333;color:#fff;padding:7px;border-radius:7px;font-size:11px;font-weight:800;text-align:center">TEST →</div></a>
-</div>
-<button class="btn btn-dark" onclick="location.reload()" style="margin-top:10px">🔄 ODŚWIEŻ STRONĘ</button>
-</div>
-
-<div class="card" style="background:linear-gradient(135deg,#0a84ff,#5e5ce6);border:none">
-<h3>🤖 Bot Telegram - status</h3>
-<p style="font-size:11px;margin-top:6px;line-height:1.4">Bot sprawdza OLX/Allegro co 5 min i wysyła Ci powiadomienia. Konfiguracja poniżej. Jeśli widzisz tę wersję, to GitHub Pages działa ✅</p>
-<div style="margin-top:10px" class="grid2">
-<a class="btn btn-dark" href="https://t.me/BotFather" target="_blank">BotFather</a>
-<a class="btn btn-dark" href="https://github.com/lukasz-topolan-cmd/szperacz/actions" target="_blank">Actions</a>
-</div>
-</div>
-
-<div class="tabs">
-<a class="tab active" href="#"><span>🔍</span>Szukaj</a>
-<a class="tab" href="#" onclick="document.getElementById('offersList').scrollIntoView({behavior:'smooth'});return false"><span>🔥</span>Oferty</a>
-<a class="tab" href="https://github.com/lukasz-topolan-cmd/szperacz/actions" target="_blank"><span>🤖</span>Bot</a>
-<a class="tab" href="#" onclick="location.reload();return false"><span>🔄</span>Odśwież</a>
-</div>
+<nav>
+  <a href="#szukaj" class="on" onclick="tab(this)">🔍 Szukaj</a>
+  <a href="#oferty" onclick="tab(this)">🔥 Oferty</a>
+  <a href="#bot" onclick="tab(this)">🤖 Bot</a>
+  <a href="#" onclick="location.reload();return false">🔄 Odśwież</a>
+</nav>
 
 <script>
-// BEZPIECZNY JS - wszystko w try/catch, nie crashuje strony nawet jak localStorage zablokowany
-try{
-  function buildUrls(){
-    var brandEl=document.getElementById('brand'); var sellerEl=document.getElementById('seller');
-    var pfEl=document.getElementById('priceFrom'); var ptEl=document.getElementById('priceTo');
-    var locEl=document.getElementById('location');
-    var brand=brandEl?brandEl.value:'bmw-e90'; var seller=sellerEl?sellerEl.value:'';
-    var priceFrom=pfEl?pfEl.value:''; var priceTo=ptEl?ptEl.value:'';
-    var olxUrl='https://www.olx.pl/d/oferty/q-'+brand+'/'; var p=[];
-    if(priceFrom) p.push('search%5Bfilter_float_price:from%5D='+priceFrom);
-    if(priceTo) p.push('search%5Bfilter_float_price:to%5D='+priceTo);
-    if(seller==='private') p.push('search%5Bprivate_business%5D=private');
-    if(seller==='business') p.push('search%5Bprivate_business%5D=business');
-    if(p.length) olxUrl+='?'+p.join('&');
-    var allegroKeyword=brand.replace(/-/g,' '); var allegroUrl='https://allegrolokalnie.pl/oferty/q/'+encodeURIComponent(allegroKeyword);
-    var ap=[]; if(priceFrom) ap.push('price_from='+priceFrom); if(priceTo) ap.push('price_to='+priceTo); if(ap.length) allegroUrl+='?'+ap.join('&');
-    var olxLink=document.getElementById('olxLink'); var allegroLink=document.getElementById('allegroLink');
-    if(olxLink) olxLink.href=olxUrl; if(allegroLink) allegroLink.href=allegroUrl;
-    return {olx:olxUrl, allegro:allegroUrl};
-  }
-  function searchBoth(){
-    try{
-      var urls=buildUrls();
-      var box=document.getElementById('linksBox'); var links=document.getElementById('searchLinks');
-      if(box) box.style.display='block';
-      if(links) links.innerHTML='<a href="'+urls.olx+'" target="_blank">🔵 OTWÓRZ OLX: '+urls.olx.substring(0,60)+'...</a><a href="'+urls.allegro+'" target="_blank">🟠 OTWÓRZ ALLEGRO: '+urls.allegro.substring(0,60)+'...</a>';
-      // Próba window.open ale z fallbackiem
-      var w1=window.open(urls.olx,'_blank'); 
-      setTimeout(function(){ window.open(urls.allegro,'_blank'); }, 500);
-      if(!w1 && box) box.scrollIntoView({behavior:'smooth'});
-    }catch(e){ console.log(e); }
-  }
-  // Event listeners bezpieczne
-  ['brand','seller','priceFrom','priceTo','location'].forEach(function(id){
-    var el=document.getElementById(id); if(el){ el.addEventListener('change', buildUrls); el.addEventListener('input', buildUrls); }
-  });
-  buildUrls();
-  window.searchBoth=searchBoth;
-}catch(e){
-  console.log('JS init error but links still work', e);
-  var s=document.getElementById('status'); if(s){ s.textContent='⚠️ JS ograniczony, ale linki działają - klikaj oferty'; s.style.color='#ff9f0a'; }
+'use strict';
+var state = { lat: null, lon: null, sound: true, offers: [] };
+
+var BRANDS = {
+  "BMW":["E90","E60","E46","F30","G20","X3","X5"],"Audi":["A4","A6","A3","80","Q5"],
+  "Volkswagen":["Golf","Passat","Polo","Tiguan","Bora"],"Opel":["Astra","Corsa","Insignia","Vectra"],
+  "Ford":["Focus","Mondeo","Fiesta","Kuga"],"Toyota":["Corolla","Yaris","Avensis","RAV4"],
+  "Skoda":["Octavia","Fabia","Superb"],"Mercedes":["C Klasa","E Klasa","190","S Klasa"],
+  "Peugeot":["207","208","308","407"],"Renault":["Megane","Clio","Laguna","Kangoo"],
+  "Fiat":["500","Punto","Ducato","Seicento"],"Hyundai":["i20","i30","i40","Tucson"],
+  "Kia":["Ceed","Picanto","Sportage","Rio"],"Mazda":["3","5","6","CX-5"],
+  "Honda":["Civic","Accord","CR-V"],"Seat":["Leon","Ibiza","Toledo","Ateca"],
+  "Nissan":["Qashqai","Micra","Note","Primera"],"Volvo":["V50","V70","S40","XC90"],
+  "Citroen":["C3","C4","C5","Berlingo"],"Dacia":["Duster","Logan","Sandero"],
+  "Suzuki":["Swift","SX4","Grand Vitara"],"Alfa Romeo":["159","147","Giulietta","Mito"],
+  "Lexus":["IS","GS","RX"],"Subaru":["Impreza","Forester","Legacy"],
+  "Mitsubishi":["Lancer","Outlander","Colt"],"Chevrolet":["Aveo","Cruze","Captiva"],
+  "Jaguar":["X-Type","XF","S-Type"],"Land Rover":["Freelander","Discovery","Range Rover"],
+  "Porsche":["Cayenne","Macan","911"],"Tesla":["Model 3","Model Y","Model S"],
+  "iPhone 13":[],"Rower elektryczny":[]
+};
+
+function el(id){ return document.getElementById(id); }
+function setStatus(t){ try{ el('status').textContent = t; }catch(e){} }
+
+function lsGet(k,d){ try{ var v = localStorage.getItem(k); return v===null? d : v; }catch(e){ return d; } }
+function lsSet(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
+
+function carImg(bg, emoji){
+  var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="400" height="260"><rect width="400" height="260" fill="'+bg+'"/><text x="200" y="160" font-size="100" text-anchor="middle">'+emoji+'</text></svg>';
+  return 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
 }
+
+var SAMPLES = [
+ {id:'s1',title:'BMW E90 320d 2008 230kkm - okazja, prywatny',price:'13 900 zł',url:'https://www.olx.pl/d/oferty/q-bmw-e90/wroclaw/',portal:'OLX',location:'Wrocław, Fabryczna',lat:51.11,lon:17.02,year:2008,mileage:'230 tys',fuel:'Diesel',seller:'👤 Prywatny',image:carImg('#12365e','🚗')},
+ {id:'s2',title:'BMW 318i E90 2006 - zadbany, jeden właściciel',price:'11 500 zł',url:'https://www.olx.pl/d/oferty/q-bmw-e90/wroclaw/',portal:'OLX',location:'Wrocław, Krzyki',lat:51.08,lon:17.05,year:2006,mileage:'198 tys',fuel:'Benzyna',seller:'👤 Prywatny',image:carImg('#0e4d3a','🚙')},
+ {id:'s3',title:'Audi A4 B8 2.0 TDI 2010 lift',price:'18 900 zł',url:'https://www.olx.pl/d/oferty/q-audi-a4/wroclaw/',portal:'OLX',location:'Wrocław, Psie Pole',lat:51.15,lon:17.08,year:2010,mileage:'265 tys',fuel:'Diesel',seller:'🏢 Firma',image:carImg('#4d1010','🚘')},
+ {id:'s4',title:'BMW E90 na Allegro Lokalnie - od ręki',price:'od 9 900 zł',url:'https://allegrolokalnie.pl/oferty/q/bmw%20e90',portal:'Allegro Lokalnie',location:'Dolnośląskie',lat:51.20,lon:16.90,year:2007,mileage:'210 tys',fuel:'Diesel',seller:'👤 Prywatny',image:carImg('#5e3a12','🚕')},
+ {id:'s5',title:'iPhone 13 128GB - dużo ofert',price:'od 1 500 zł',url:'https://www.olx.pl/d/oferty/q-iphone-13/wroclaw/',portal:'OLX',location:'Cała Polska',lat:null,lon:null,year:null,mileage:null,fuel:null,seller:'mieszany',image:carImg('#2a2a2e','📱')},
+ {id:'s6',title:'Rower elektryczny Kross - okazje',price:'od 2 900 zł',url:'https://allegrolokalnie.pl/oferty/q/rower%20elektryczny',portal:'Allegro Lokalnie',location:'Wrocław',lat:51.10,lon:17.03,year:2022,mileage:null,fuel:'elektryk',seller:'👤 Prywatny',image:carImg('#123f2a','🚲')}
+];
+
+function distKm(lat1,lon1,lat2,lon2){
+  var R=6371, dLa=(lat2-lat1)*Math.PI/180, dLo=(lon2-lon1)*Math.PI/180;
+  var a=Math.sin(dLa/2)*Math.sin(dLa/2)+Math.cos(lat1*Math.PI/180)*Math.cos(lat2*Math.PI/180)*Math.sin(dLo/2)*Math.sin(dLo/2);
+  return Math.round(R*2*Math.atan2(Math.sqrt(a),Math.sqrt(1-a)));
+}
+
+function distBadge(o){
+  if(state.lat!==null && o.lat){ return '<span class="badge dist">📍 '+distKm(state.lat,state.lon,o.lat,o.lon)+' km od Ciebie</span>'; }
+  return '';
+}
+
+function renderOffers(list){
+  state.offers = list;
+  var html = '';
+  for(var i=0;i<list.length;i++){
+    var o = list[i];
+    var meta = [];
+    if(o.location) meta.push('📍 '+o.location);
+    if(o.year) meta.push('📅 '+o.year);
+    if(o.mileage) meta.push('🛣️ '+o.mileage);
+    if(o.fuel) meta.push('⛽ '+o.fuel);
+    if(o.seller) meta.push(o.seller);
+    var pcls = o.portal && o.portal.indexOf('Allegro')===0 ? 'al' : '';
+    html += '<div class="offer">'
+      + '<button class="eye" data-i="'+i+'">👁 Podgląd</button>'
+      + '<a class="main" href="'+o.url+'" target="_blank" rel="noopener">'
+      + '<img src="'+(o.image||carImg('#222','🚗'))+'" alt="" loading="lazy">'
+      + '<div class="body"><div class="title">'+o.title+'</div>'
+      + '<div class="price">'+o.price+'</div>'
+      + '<div class="meta">'+meta.join(' • ')+'</div>'
+      + '<div class="badges"><span class="badge portal '+pcls+'">'+o.portal+'</span>'+distBadge(o)+'</div>'
+      + '</div></a></div>';
+  }
+  el('offersGrid').innerHTML = html || '<div style="color:#8e8e93;font-size:13px">Brak ofert.</div>';
+}
+
+/* ---- wyszukiwanie ---- */
+function kw(){
+  var b = el('brand').value, m = el('model').value, g = el('gearbox').value;
+  var k = b + (m && m!=='all' ? ' '+m : '');
+  if(g==='manual') k += ' manual';
+  if(g==='automatic') k += ' automat';
+  return k.toLowerCase().replace(/\s+/g,'-');
+}
+function buildUrls(){
+  try{
+    var k = kw();
+    var city = el('city').value.trim().toLowerCase().replace(/[^a-z0-9-]+/g,'-');
+    var pF = el('pfrom').value, pT = el('pto').value, sel = el('seller').value, rad = el('radius').value;
+    var olx = 'https://www.olx.pl/d/oferty/q-'+k+'/'+(city? city+'/' : '');
+    var par = [];
+    if(pF) par.push(encodeURIComponent('search[filter_float_price:from]')+'='+pF);
+    if(pT) par.push(encodeURIComponent('search[filter_float_price:to]')+'='+pT);
+    if(sel!=='all') par.push(encodeURIComponent('search[private_business]')+'='+sel);
+    if(city && rad) par.push(encodeURIComponent('search[filter_float_distance:km]')+'='+rad);
+    if(par.length) olx += '?'+par.join('&');
+    var alg = 'https://allegrolokalnie.pl/oferty/q/'+k.replace(/-/g,'%20')+'?price_from='+(pF||'')+'&price_to='+(pT||'');
+    var de = buildDeUrl(), at = buildAtUrl();
+    el('olxLink').href = olx; el('algLink').href = alg; el('deLink').href = de; el('atLink').href = at;
+    el('linksInner').innerHTML =
+      '<a href="'+olx+'" target="_blank" rel="noopener">🔵 OLX: '+k+(city? ' / '+city:'')+'</a>'+
+      '<a href="'+alg+'" target="_blank" rel="noopener">🟠 Allegro: '+k+'</a>'+
+      '<a href="'+de+'" target="_blank" rel="noopener">🇩 Kleinanzeigen: '+kwDe()+'</a>'+
+      '<a href="'+at+'" target="_blank" rel="noopener">🇦 willhaben: '+kwDe()+'</a>';
+  }catch(e){ setStatus('⚠️ błąd budowy linków: '+e); }
+}
+function kwDe(){
+  var b = el('brand').value, m = el('model').value, g = el('gearbox').value;
+  var k = b + (m && m!=='all' ? ' '+m : '');
+  if(g==='manual') k += ' schaltgetriebe';
+  if(g==='automatic') k += ' automatik';
+  return k.toLowerCase();
+}
+function buildDeUrl(){
+  var k = kwDe().replace(/\s+/g,'-');
+  var pF = el('pfrom').value, pT = el('pto').value;
+  var preis = '';
+  if(pF || pT) preis = 'preis:'+(pF||0)+'-'+(pT||'')+'/';
+  return 'https://www.kleinanzeigen.de/s-'+k+'/'+preis+'k0';
+}
+function buildAtUrl(){
+  var pF = el('pfrom').value, pT = el('pto').value;
+  var u = 'https://www.willhaben.at/iad/kaufen-und-verkaufen/marktplatz?keyword='+encodeURIComponent(kwDe());
+  if(pF) u += '&PRICE_FROM='+pF;
+  if(pT) u += '&PRICE_TO='+pT;
+  return u;
+}
+function searchAll(){
+  buildUrls();
+  var urls = [el('olxLink').href, el('algLink').href, el('deLink').href, el('atLink').href];
+  for(var i=0;i<urls.length;i++){ try{ window.open(urls[i],'_blank'); }catch(e){} }
+  el('linksBox').style.display = 'block';
+  setStatus('✅ Otwieram 4 portale. Jeśli Safari zablokowało — kliknij linki powyżej.');
+}
+function onBrand(){
+  var b = el('brand').value, ms = BRANDS[b] || [], html = '<option value="all">Wszystkie modele</option>';
+  for(var i=0;i<ms.length;i++) html += '<option>'+ms[i]+'</option>';
+  el('model').innerHTML = html;
+  buildUrls();
+}
+
+/* ---- GPS ---- */
+function useGps(){
+  if(!navigator.geolocation){ setStatus('⚠️ Brak GPS w tej przeglądarce'); return; }
+  setStatus('📍 Szukam Twojej pozycji...');
+  try{
+    navigator.geolocation.getCurrentPosition(function(p){
+      state.lat = p.coords.latitude; state.lon = p.coords.longitude;
+      setStatus('📍 Jesteś: '+state.lat.toFixed(3)+', '+state.lon.toFixed(3)+' — odległości policzone!');
+      renderOffers(state.offers);
+    }, function(){ setStatus('⚠️ GPS odmówiony — wpisz miasto ręcznie, odległości po GPS niedostępne'); }, {timeout:10000});
+  }catch(e){ setStatus('⚠️ GPS błąd'); }
+}
+
+/* ---- dźwięk ---- */
+var AC = null;
+function beep(){
+  if(!state.sound) return;
+  try{
+    AC = AC || new (window.AudioContext||window.webkitAudioContext)();
+    var t = AC.currentTime;
+    [880,1320].forEach(function(f,i){
+      var o = AC.createOscillator(), g = AC.createGain();
+      o.frequency.value = f; o.connect(g); g.connect(AC.destination);
+      g.gain.setValueAtTime(0.0001,t+i*0.18); g.gain.exponentialRampToValueAtTime(0.3,t+i*0.18+0.02); g.gain.exponentialRampToValueAtTime(0.0001,t+i*0.18+0.16);
+      o.start(t+i*0.18); o.stop(t+i*0.18+0.18);
+    });
+  }catch(e){}
+}
+function toggleSound(){
+  state.sound = !state.sound;
+  el('soundBtn').textContent = state.sound ? '🔔' : '🔕';
+  lsSet('sound', state.sound?'1':'0');
+  if(state.sound) beep();
+}
+
+/* ---- prawdziwe oferty z repo (zapisywane przez bota) ---- */
+function loadReal(){
+  setStatus('📥 Pobieram prawdziwe oferty z GitHub...');
+  try{
+    fetch('https://raw.githubusercontent.com/lukasztopolan-cmd/szperacz/main/offers.json',{cache:'no-store'})
+      .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
+      .then(function(list){
+        if(!list || !list.length){ setStatus('⚠️ offers.json pusty — bot jeszcze nie zapisał ofert'); return; }
+        renderOffers(list.slice(0,20));
+        setStatus('✅ Pobrano '+list.length+' prawdziwych ofert!');
+        beep();
+      })
+      .catch(function(e){ setStatus('⚠️ Brak offers.json w repo ('+e.message+') — bot zapisze je przy najbliższym runie'); });
+  }catch(e){ setStatus('⚠️ fetch błąd'); }
+}
+
+/* ---- modal ---- */
+function openModal(i){
+  var o = state.offers[i]; if(!o) return;
+  el('mImg').src = o.image || carImg('#222','🚗');
+  el('mTitle').textContent = o.title;
+  el('mPrice').textContent = o.price;
+  var meta = [];
+  if(o.location) meta.push('📍 '+o.location);
+  if(o.year) meta.push('📅 Rok: '+o.year);
+  if(o.mileage) meta.push('🛣️ Przebieg: '+o.mileage);
+  if(o.fuel) meta.push('⛽ Paliwo: '+o.fuel);
+  if(o.seller) meta.push('Sprzedawca: '+o.seller);
+  meta.push('🏷️ '+o.portal);
+  if(state.lat!==null && o.lat) meta.push('🧭 '+distKm(state.lat,state.lon,o.lat,o.lon)+' km od Ciebie');
+  el('mMeta').innerHTML = meta.join('<br>');
+  el('mOpen').href = o.url;
+  el('modal').className = 'modal open';
+}
+function closeModal(){ el('modal').className = 'modal'; }
+function shareOffer(){
+  var t = el('mTitle').textContent + ' ' + el('mPrice').textContent + ' ' + el('mOpen').href;
+  if(navigator.share){ try{ navigator.share({title:'Łowca Okazji',text:t}); }catch(e){} }
+  else { try{ navigator.clipboard.writeText(t); setStatus('📋 Skopiowano do schowka!'); }catch(e){ prompt('Skopiuj:',t); } }
+}
+function tab(a){
+  try{
+    var as = document.querySelectorAll('nav a'); for(var i=0;i<as.length;i++) as[i].className='';
+    a.className='on';
+    var id = a.getAttribute('href').slice(1);
+    var s = document.getElementById(id); if(s) s.scrollIntoView({behavior:'smooth'});
+  }catch(e){}
+  return false;
+}
+
+/* ---- start ---- */
+(function init(){
+  try{
+    var html='';
+    for(var b in BRANDS) html += '<option'+(b==='BMW'?' selected':'')+'>'+b+'</option>';
+    el('brand').innerHTML = html;
+    onBrand();
+    state.sound = lsGet('sound','1')==='1';
+    el('soundBtn').textContent = state.sound ? '🔔' : '🔕';
+    el('city').value = lsGet('city','wroclaw');
+    el('city').addEventListener('change', function(){ lsSet('city', el('city').value); buildUrls(); });
+    ['brand','model','seller','gearbox','radius','pfrom','pto'].forEach(function(id){ el(id).addEventListener('change', buildUrls); });
+    el('offersGrid').addEventListener('click', function(e){
+      var b = e.target.closest ? e.target.closest('.eye') : null;
+      if(b){ e.preventDefault(); openModal(parseInt(b.getAttribute('data-i'),10)); }
+    });
+    renderOffers(SAMPLES);
+    buildUrls();
+    if('serviceWorker' in navigator){ navigator.serviceWorker.register('sw.js').catch(function(){}); }
+  }catch(e){ setStatus('⚠️ init: '+e); }
+})();
 </script>
-</body>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a43b50c21b88dcae',t:'MTc5MDg1NjExNQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
