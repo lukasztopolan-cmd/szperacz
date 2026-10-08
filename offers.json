@@ -1,5 +1,14 @@
 [
   {
+    "id": "olx_1cDJHx",
+    "title": "Okazja BMW E90 318i",
+    "price": "10 500 zł",
+    "url": "https://www.olx.pl/d/oferta/okazja-bmw-e90-318i-CID5-ID1cDJHx.html?search_reason=search%7Cpromoted",
+    "location": "wroclaw",
+    "portal": "OLX",
+    "image": "https://ireland.apollo.olxcdn.com:443/v1/files/czno4xb00hs32-PL/image;s=150x160;q=50"
+  },
+  {
     "id": "olx_1cB7l3",
     "title": "BMW E90 2.0LPG/ładne wyposażenie/nabita Klima/czujniki parkowania/Alufelgi/raty/wynajem/zamiana/gwarancja",
     "price": "14 990 zł",
@@ -9,22 +18,13 @@
     "image": "https://ireland.apollo.olxcdn.com:443/v1/files/1oj14iwjgrvr3-PL/image;s=150x160;q=50"
   },
   {
-    "id": "olx_1cDg0A",
-    "title": "BMW E90 318I 2.0b • ZADBANY • ALUFELGI • OC i PRZEGLĄD do 2027 • Zamiana",
-    "price": "9 499 zł",
-    "url": "https://www.olx.pl/d/oferta/bmw-e90-318i-2-0b-zadbany-alufelgi-oc-i-przeglad-do-2027-zamiana-CID5-ID1cDg0A.html?search_reason=search%7Cpromoted",
+    "id": "olx_1cwCbW",
+    "title": "BMW E90 2.0LPG // Automat // Dynamiczny // Super Stan // Zamiana // Raty",
+    "price": "10 990 zł",
+    "url": "https://www.olx.pl/d/oferta/bmw-e90-2-0lpg-automat-dynamiczny-super-stan-zamiana-raty-CID5-ID1cwCbW.html?search_reason=search%7Cpromoted",
     "location": "wroclaw",
     "portal": "OLX",
-    "image": "https://ireland.apollo.olxcdn.com:443/v1/files/na373upw8pxu3-PL/image;s=150x160;q=50"
-  },
-  {
-    "id": "olx_1c1n0g",
-    "title": "BMW 3 E90 po lift",
-    "price": "10 000 zł",
-    "url": "https://www.olx.pl/d/oferta/bmw-3-e90-po-lift-CID5-ID1c1n0g.html?search_reason=search%7Cpromoted",
-    "location": "wroclaw",
-    "portal": "OLX",
-    "image": "https://ireland.apollo.olxcdn.com:443/v1/files/vx0ec6oryy063-PL/image;s=150x160;q=50"
+    "image": "https://ireland.apollo.olxcdn.com:443/v1/files/n3ppn1lwc4jb2-PL/image;s=150x160;q=50"
   },
   {
     "id": "olx_6IghVA",
@@ -36,19 +36,28 @@
     "image": "https://ireland.apollo.olxcdn.com:443/v1/files/ll9rh4g5u6jq-PL/image;s=150x160;q=50"
   },
   {
+    "id": "olx_6IeL1p",
+    "title": "BMW Seria 3 2,5 (218KM) Automat Bezwypadkowa Skóry Sportsitze iDrive",
+    "price": "14 900 zł",
+    "url": "https://www.otomoto.pl/osobowe/oferta/bmw-seria-3-2-5-218km-automat-bezwypadkowa-skory-sportsitze-idrive-ID6IeL1p.html",
+    "location": "wroclaw",
+    "portal": "OLX",
+    "image": "https://ireland.apollo.olxcdn.com:443/v1/files/3yz3csabr9591-PL/image;s=150x160;q=50"
+  },
+  {
     "id": "olx_6IfzRp",
     "title": "BMW Seria 3 BMW e90 325i 3.0 2008r.",
     "price": "8 000 zł",
     "url": "https://www.otomoto.pl/osobowe/oferta/bmw-seria-3-bmw-e90-325i-3-0-2008r-ID6IfzRp.html",
     "location": "wroclaw",
     "portal": "OLX",
-    "image": "https://ireland.apollo.olxcdn.com:443/v1/files/ngkn344pm6q01-PL/image;s=150x160;q=50"
+    "image": null
   },
   {
-    "id": "olx_6IeL1p",
-    "title": "BMW Seria 3 2,5 (218KM) Automat Bezwypadkowa Skóry Sportsitze iDrive",
-    "price": "14 900 zł",
-    "url": "https://www.otomoto.pl/osobowe/oferta/bmw-seria-3-2-5-218km-automat-bezwypadkowa-skory-sportsitze-idrive-ID6IeL1p.html",
+    "id": "olx_6IfAn9",
+    "title": "BMW Seria 3 Bmw e90 2.0 benz 150km oryginalny lakier bezwypadkowy",
+    "price": "13 400 zł",
+    "url": "https://www.otomoto.pl/osobowe/oferta/bmw-seria-3-bmw-e90-2-0-benz-150km-oryginalny-lakier-bezwypadkowy-ID6IfAn9.html",
     "location": "wroclaw",
     "portal": "OLX",
     "image": null
@@ -63,19 +72,10 @@
     "image": null
   },
   {
-    "id": "olx_1ccVsx",
-    "title": "BMW E90 2.0 LPG//Oszczedny//SuperStan//BezRdzy//Klima//DlugieOplaty//OdWlasciciela//SerwisowanyNaBiezaco//Raty//Zamiana",
-    "price": "10 990 zł",
-    "url": "https://www.olx.pl/d/oferta/bmw-e90-2-0-lpg-oszczedny-superstan-bezrdzy-klima-dlugieoplaty-odwlasciciela-serwisowanynabiezaco-raty-zamiana-CID5-ID1ccVsx.html?search_reason=search%7Corganic",
-    "location": "wroclaw",
-    "portal": "OLX",
-    "image": null
-  },
-  {
-    "id": "olx_6IfAn9",
-    "title": "BMW Seria 3 Bmw e90 2.0 benz 150km oryginalny lakier bezwypadkowy",
-    "price": "13 400 zł",
-    "url": "https://www.otomoto.pl/osobowe/oferta/bmw-seria-3-bmw-e90-2-0-benz-150km-oryginalny-lakier-bezwypadkowy-ID6IfAn9.html",
+    "id": "olx_6Iglzx",
+    "title": "BMW Seria 3 Bmw Seria-3 E90 2006r BENZYNA",
+    "price": "15 000 zł",
+    "url": "https://www.otomoto.pl/osobowe/oferta/bmw-seria-3-bmw-seria-3-e90-2006r-benzyna-ID6Iglzx.html",
     "location": "wroclaw",
     "portal": "OLX",
     "image": null
@@ -207,15 +207,6 @@
     "image": "https://ireland.apollo.olxcdn.com:443/v1/files/35qtnz8wup7m-PL/image;s=150x160;q=50"
   },
   {
-    "id": "olx_1cfF2h",
-    "title": "Łyżka skarpowa 2.4m, 1.85m3 szybkozłacze pod Komatsu PC360 uszkodzona",
-    "price": "8 900 zł",
-    "url": "https://www.olx.pl/d/oferta/lyzka-skarpowa-2-4m-1-85m3-szybkozlacze-pod-komatsu-pc360-uszkodzona-CID757-ID1cfF2h.html?search_reason=search%7Cpromoted",
-    "location": "dolnoslaskie",
-    "portal": "OLX",
-    "image": "https://ireland.apollo.olxcdn.com:443/v1/files/zray7mxvpocn1-PL/image;s=150x160;q=50"
-  },
-  {
     "id": "olx_1cngjY",
     "title": "Silnik Kubota D1803 uszkodzony.",
     "price": "2 300 zł",
@@ -225,37 +216,64 @@
     "image": "https://ireland.apollo.olxcdn.com:443/v1/files/h1bdr6z1cq713-PL/image;s=150x160;q=50"
   },
   {
-    "id": "olx_1cES66",
-    "title": "Iphone 16 uszkodzony",
-    "price": "1 600 zł",
-    "url": "https://www.olx.pl/d/oferta/iphone-16-uszkodzony-CID99-ID1cES66.html?search_reason=search%7Corganic",
+    "id": "olx_1cfF2h",
+    "title": "Łyżka skarpowa 2.4m, 1.85m3 szybkozłacze pod Komatsu PC360 uszkodzona",
+    "price": "8 900 zł",
+    "url": "https://www.olx.pl/d/oferta/lyzka-skarpowa-2-4m-1-85m3-szybkozlacze-pod-komatsu-pc360-uszkodzona-CID757-ID1cfF2h.html?search_reason=search%7Cpromoted",
     "location": "dolnoslaskie",
     "portal": "OLX",
-    "image": "https://ireland.apollo.olxcdn.com:443/v1/files/osl8025qoj6s1-PL/image;s=150x160;q=50"
+    "image": "https://ireland.apollo.olxcdn.com:443/v1/files/zray7mxvpocn1-PL/image;s=150x160;q=50"
   },
   {
-    "id": "olx_6IgrIW",
-    "title": "Mercedes-Benz  Mercedes w115 240 diesel manual",
-    "price": "9 600 zł",
-    "url": "https://www.otomoto.pl/osobowe/oferta/mercedes-benz-mercedes-w115-240-diesel-manual-ID6IgrIW.html",
+    "id": "olx_1cFIN5",
+    "title": "Mondeo 4 generacji",
+    "price": "1 200 zł",
+    "url": "https://www.olx.pl/d/oferta/mondeo-4-generacji-CID5-ID1cFIN5.html?search_reason=search%7Corganic",
     "location": "dolnoslaskie",
     "portal": "OLX",
-    "image": "https://ireland.apollo.olxcdn.com:443/v1/files/sdubxbh0xko43-PL/image;s=150x160;q=50"
+    "image": "https://ireland.apollo.olxcdn.com:443/v1/files/zui8htdd6h932-PL/image;s=150x160;q=50"
   },
   {
-    "id": "olx_6IgUVl",
-    "title": "SUNWARD SWE 15  uszkodzona",
-    "price": "9 840 zł",
-    "url": "https://www.otomoto.pl/oferta/sunward-swe-15-uszkodzona-ID6IgUVl.html",
+    "id": "olx_6Ih3JS",
+    "title": "Ford EcoSport Poduszki całe, odpala",
+    "price": "9 900 zł",
+    "url": "https://www.otomoto.pl/osobowe/oferta/ford-ecosport-poduszki-cale-odpala-ID6Ih3JS.html",
+    "location": "dolnoslaskie",
+    "portal": "OLX",
+    "image": "https://ireland.apollo.olxcdn.com:443/v1/files/546ulha6l06k-PL/image;s=150x160;q=50"
+  },
+  {
+    "id": "olx_6Ift8c",
+    "title": "Hyundai i20 klimatyzacja / wersja poliftowa",
+    "price": "8 999 zł",
+    "url": "https://www.otomoto.pl/osobowe/oferta/hyundai-i20-klimatyzacja-wersja-poliftowa-ID6Ift8c.html",
     "location": "dolnoslaskie",
     "portal": "OLX",
     "image": null
   },
   {
-    "id": "olx_1cF0yB",
-    "title": "Renault Laguna III",
-    "price": "6 900 zł",
-    "url": "https://www.olx.pl/d/oferta/renault-laguna-iii-CID5-ID1cF0yB.html?search_reason=search%7Corganic",
+    "id": "olx_6Igjw2",
+    "title": "Hyundai i10 Hyundai i10 2015r 1.0benzyna",
+    "price": "8 900 zł",
+    "url": "https://www.otomoto.pl/osobowe/oferta/hyundai-i10-hyundai-i10-2015r-1-0benzyna-ID6Igjw2.html",
+    "location": "dolnoslaskie",
+    "portal": "OLX",
+    "image": null
+  },
+  {
+    "id": "olx_6Ih3dk",
+    "title": "Opel Astra 140KM / rok produkcji 2010",
+    "price": "9 900 zł",
+    "url": "https://www.otomoto.pl/osobowe/oferta/opel-astra-140km-rok-produkcji-2010-ID6Ih3dk.html",
+    "location": "dolnoslaskie",
+    "portal": "OLX",
+    "image": null
+  },
+  {
+    "id": "olx_1cF8WW",
+    "title": "Renault Koleos 2.0 dci 2009",
+    "price": "4 999 zł",
+    "url": "https://www.olx.pl/d/oferta/renault-koleos-2-0-dci-2009-CID5-ID1cF8WW.html?search_reason=search%7Corganic",
     "location": "dolnoslaskie",
     "portal": "OLX",
     "image": null
@@ -270,37 +288,19 @@
     "image": null
   },
   {
-    "id": "olx_1cFj17",
-    "title": "Sprzedam niezawodna Skode Octavie 2006 1,6 mpi hatchback",
-    "price": "6 500 zł",
-    "url": "https://www.olx.pl/d/oferta/sprzedam-niezawodna-skode-octavie-2006-1-6-mpi-hatchback-CID5-ID1cFj17.html?search_reason=search%7Corganic",
+    "id": "olx_6If1h7",
+    "title": "Skoda Octavia Skoda Octavia od prywatnego właściciela",
+    "price": "7 700 zł",
+    "url": "https://www.otomoto.pl/osobowe/oferta/skoda-octavia-skoda-octavia-od-prywatnego-wlasciciela-ID6If1h7.html",
     "location": "dolnoslaskie",
     "portal": "OLX",
     "image": null
   },
   {
-    "id": "olx_6IfWvI",
-    "title": "Zontes 125U Niski przebieg 2 kluczyki",
-    "price": "7 800 zł",
-    "url": "https://www.otomoto.pl/motocykle-i-quady/oferta/zontes-125u-niski-przebieg-2-kluczyki-ID6IfWvI.html",
-    "location": "dolnoslaskie",
-    "portal": "OLX",
-    "image": null
-  },
-  {
-    "id": "olx_6I2mbU",
-    "title": "Ford Fiesta Ford Fiesta Mk7 2014",
-    "price": "8 500 zł",
-    "url": "https://www.otomoto.pl/osobowe/oferta/ford-fiesta-ford-fiesta-mk7-2014-ID6I2mbU.html",
-    "location": "dolnoslaskie",
-    "portal": "OLX",
-    "image": null
-  },
-  {
-    "id": "olx_1cF58c",
-    "title": "Seat Alhambra 2009",
-    "price": "10 000 zł",
-    "url": "https://www.olx.pl/d/oferta/seat-alhambra-2009-CID5-ID1cF58c.html?search_reason=search%7Corganic",
+    "id": "olx_6Ih2t5",
+    "title": "Fiat Panda niski przebieg okazja",
+    "price": "7 700 zł",
+    "url": "https://www.otomoto.pl/osobowe/oferta/fiat-panda-niski-przebieg-okazja-ID6Ih2t5.html",
     "location": "dolnoslaskie",
     "portal": "OLX",
     "image": null
