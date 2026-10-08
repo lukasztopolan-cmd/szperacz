@@ -81,9 +81,12 @@ nav a.on{color:#ff3b30}
       <select id="gearbox"><option value="all">Wszystkie</option><option value="manual">🕹️ Manualna</option><option value="automatic">⚙️ Automatyczna</option></select></div>
     <div><label>Cena od (zł)</label><input id="pfrom" type="number" inputmode="numeric" placeholder="3000"></div>
     <div><label>Cena do (zł)</label><input id="pto" type="number" inputmode="numeric" placeholder="15000"></div>
+    <div><label>Rok od</label><input id="yfrom" type="number" inputmode="numeric" placeholder="2005"></div>
+    <div><label>Rok do</label><input id="yto" type="number" inputmode="numeric" placeholder="2012"></div>
+    <div><label>Stan</label>
+      <select id="cond"><option value="all">Wszystkie</option><option value="ok">🚗 Nieuszkodzone</option><option value="damaged">💥 Uszkodzone</option></select></div>
     <div><label>Promień (km)</label>
       <select id="radius"><option value="">cała Polska</option><option value="25">25 km</option><option value="50">50 km</option><option value="100" selected>100 km</option><option value="200">200 km</option></select></div>
-    <div><label>&nbsp;</label><div style="font-size:11px;color:#666;padding:10px 2px">Promień działa z GPS przy ofertach</div></div>
     <div style="grid-column:1/-1"><label>📍 Lokalizacja (miasto w URL, np. wroclaw)</label><input id="city" placeholder="wroclaw" value="wroclaw"></div>
   </div>
   <div class="btnrow">
@@ -91,10 +94,10 @@ nav a.on{color:#ff3b30}
     <a class="btn alg" id="algLink" href="https://allegrolokalnie.pl/oferty/q/bmw%20e90" target="_blank" rel="noopener">🟠 ALLEGRO</a>
     <a class="btn de" id="deLink" href="https://www.kleinanzeigen.de/s-bmw-e90/k0" target="_blank" rel="noopener">🇩 KLEINANZEIGEN</a>
     <a class="btn at" id="atLink" href="https://www.willhaben.at/iad/kaufen-und-verkaufen/marktplatz?keyword=bmw+e90" target="_blank" rel="noopener">🇦 WILLHABEN</a>
-    <button class="btn both" onclick="searchAll()">🔍 SZUKAJ NA WSZYSTKICH (4 zakładki)</button>
+    <button class="btn both" onclick="searchAll()">🔍 POKAŻ LINKI DO 4 PORTALI (bez popupów)</button>
   </div>
   <div id="linksBox">
-    <div style="font-size:12px;color:#7ee2a8;margin-bottom:4px">Safari zablokowało zakładki? Kliknij:</div>
+    <div style="font-size:12px;color:#7ee2a8;margin-bottom:4px">Kliknij portal — otworzy się w nowej karcie (Safari nie blokuje linków):</div>
     <div id="linksInner"></div>
   </div>
   <div id="status"></div>
@@ -107,6 +110,33 @@ nav a.on{color:#ff3b30}
     <button class="btn small" onclick="beep()">🔊 Test dźwięku</button>
   </div>
   <div class="offers" id="offersGrid"></div>
+</section>
+
+<section id="kryteria">
+  <h2>🎯 Moje kryteria bota — zarządzaj z tej strony</h2>
+  <div id="huntersList" class="offers"></div>
+  <div class="btnrow" style="margin-top:10px">
+    <button class="btn small" onclick="addHunter()">➕ Dodaj z filtrów wyżej</button>
+    <button class="btn small" onclick="loadHunters()">🔄 Odśwież listę</button>
+    <button class="btn both" id="saveBtn" onclick="saveHunters()">💾 ZAPISZ do GitHub (bot przejmie)</button>
+    <button class="btn small" onclick="runBotNow()">🚀 Odpal bota TERAZ</button>
+  </div>
+  <div id="tokenRow" style="display:none;margin-top:10px;background:#101a2a;border:1px solid #234;border-radius:12px;padding:10px">
+    <div style="font-size:12px;color:#9ec5ff;line-height:1.6;margin-bottom:6px">
+      🔑 Jednorazowo: utwórz token <b>fine-grained</b>:<br>
+      1. Otwórz: github.com/settings/personal-access-tokens/new<br>
+      2. Repository access → <b>Only select repositories</b> → wybierz <b>szperacz</b><br>
+      3. Permissions → Repository permissions → <b>Contents: Read and write</b> oraz <b>Actions: Read and write</b><br>
+      4. Generate token → skopiuj (zaczyna się od github_pat_...)<br>
+      ⚠️ Token zostaje TYLKO na Twoim telefonie (localStorage), nigdy w repo.
+    </div>
+    <input id="ghtokenInput" placeholder="github_pat_..." style="margin-bottom:6px">
+    <button class="btn small" onclick="saveToken()">🔑 Zapisz token i wyślij kryteria</button>
+  </div>
+  <div style="font-size:12px;color:#98989d;margin-top:8px;line-height:1.6">
+    Ustaw filtry na górze (marka, model, cena, rok, stan...) → <b>➕ Dodaj</b> → lista rośnie → <b>💾 Zapisz</b>.<br>
+    ✖ usuwa kryterium, ⏸ pauzuje bez kasowania. Bot szuka TYLKO tego, co na liście.
+  </div>
 </section>
 
 <section id="bot">
@@ -143,7 +173,8 @@ nav a.on{color:#ff3b30}
 
 <script>
 'use strict';
-var state = { lat: null, lon: null, sound: true, offers: [] };
+var state = { lat: null, lon: null, sound: true, offers: [], hunters: [] };
+var REPO = 'lukasztopolan-cmd/szperacz';
 
 var BRANDS = {
   "BMW":["E90","E60","E46","F30","G20","X3","X5"],"Audi":["A4","A6","A3","80","Q5"],
@@ -221,11 +252,18 @@ function renderOffers(list){
 }
 
 /* ---- wyszukiwanie ---- */
+function condWord(){
+  var c = el('cond').value;
+  if(c==='damaged') return ' uszkodzony';
+  if(c==='ok') return ' bezwypadkowy';
+  return '';
+}
 function kw(){
   var b = el('brand').value, m = el('model').value, g = el('gearbox').value;
   var k = b + (m && m!=='all' ? ' '+m : '');
   if(g==='manual') k += ' manual';
   if(g==='automatic') k += ' automat';
+  k += condWord();
   return k.toLowerCase().replace(/\s+/g,'-');
 }
 function buildUrls(){
@@ -234,9 +272,12 @@ function buildUrls(){
     var city = el('city').value.trim().toLowerCase().replace(/[^a-z0-9-]+/g,'-');
     var pF = el('pfrom').value, pT = el('pto').value, sel = el('seller').value, rad = el('radius').value;
     var olx = 'https://www.olx.pl/d/oferty/q-'+k+'/'+(city? city+'/' : '');
+    var yF = el('yfrom').value, yT = el('yto').value;
     var par = [];
     if(pF) par.push(encodeURIComponent('search[filter_float_price:from]')+'='+pF);
     if(pT) par.push(encodeURIComponent('search[filter_float_price:to]')+'='+pT);
+    if(yF) par.push(encodeURIComponent('search[filter_float_year:from]')+'='+yF);
+    if(yT) par.push(encodeURIComponent('search[filter_float_year:to]')+'='+yT);
     if(sel!=='all') par.push(encodeURIComponent('search[private_business]')+'='+sel);
     if(city && rad) par.push(encodeURIComponent('search[filter_float_distance:km]')+'='+rad);
     if(par.length) olx += '?'+par.join('&');
@@ -255,6 +296,9 @@ function kwDe(){
   var k = b + (m && m!=='all' ? ' '+m : '');
   if(g==='manual') k += ' schaltgetriebe';
   if(g==='automatic') k += ' automatik';
+  var c = el('cond').value;
+  if(c==='damaged') k += ' defekt';
+  if(c==='ok') k += ' unfallfrei';
   return k.toLowerCase();
 }
 function buildDeUrl(){
@@ -273,10 +317,9 @@ function buildAtUrl(){
 }
 function searchAll(){
   buildUrls();
-  var urls = [el('olxLink').href, el('algLink').href, el('deLink').href, el('atLink').href];
-  for(var i=0;i<urls.length;i++){ try{ window.open(urls[i],'_blank'); }catch(e){} }
   el('linksBox').style.display = 'block';
-  setStatus('✅ Otwieram 4 portale. Jeśli Safari zablokowało — kliknij linki powyżej.');
+  try{ el('linksBox').scrollIntoView({behavior:'smooth', block:'nearest'}); }catch(e){}
+  setStatus('👇 Kliknij portale poniżej (jeden po drugim) — zero popupów, Safari nie blokuje.');
 }
 function onBrand(){
   var b = el('brand').value, ms = BRANDS[b] || [], html = '<option value="all">Wszystkie modele</option>';
@@ -360,6 +403,129 @@ function shareOffer(){
   if(navigator.share){ try{ navigator.share({title:'Łowca Okazji',text:t}); }catch(e){} }
   else { try{ navigator.clipboard.writeText(t); setStatus('📋 Skopiowano do schowka!'); }catch(e){ prompt('Skopiuj:',t); } }
 }
+/* ---- menedżer kryteriów bota (hunters.json przez GitHub API) ---- */
+function loadHunters(){
+  try{
+    setStatus('🔄 Pobieram kryteria z repo...');
+    fetch('https://raw.githubusercontent.com/'+REPO+'/main/hunters.json',{cache:'no-store'})
+      .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
+      .then(function(list){ state.hunters = list||[]; renderHunters(); setStatus('✅ Twoje kryteria: '+state.hunters.length); })
+      .catch(function(e){ state.hunters = []; renderHunters(); setStatus('⚠️ Nie pobrałem kryteriów ('+e+')'); });
+  }catch(e){ setStatus('⚠️ loadHunters: '+e); }
+}
+function renderHunters(){
+  var h = state.hunters, html = '';
+  for(var i=0;i<h.length;i++){
+    var x = h[i];
+    var meta = [x.keyword||''];
+    meta.push(x.portal==='both'?'OLX+Allegro':(x.portal||''));
+    if(x.price_to) meta.push('do '+x.price_to+' zł');
+    if(x.year_from||x.year_to) meta.push((x.year_from||'…')+'–'+(x.year_to||'…'));
+    if(x.damaged==='no') meta.push('🚗 bez wypadków');
+    if(x.damaged==='yes') meta.push('💥 uszkodzone');
+    if(x.seller_type==='private') meta.push('👤 prywatni');
+    html += '<div class="offer" style="padding:10px 12px">'
+      + '<div class="title" style="font-size:13px">'+(x.active?'🟢':'')+' '+(x.name||x.keyword)+'</div>'
+      + '<div class="meta">'+meta.join(' • ')+'</div>'
+      + '<div class="badges" style="margin-top:6px">'
+      + '<button class="chip" onclick="toggleHunter('+i+')">'+(x.active?'⏸ pauza':'▶ włącz')+'</button> '
+      + '<button class="chip" style="border-color:#7a2a2a" onclick="delHunter('+i+')">✖ usuń</button>'
+      + '</div></div>';
+  }
+  el('huntersList').innerHTML = html || '<div style="color:#8e8e93;font-size:13px">Brak kryteriów — ustaw filtry wyżej i kliknij ➕ Dodaj.</div>';
+}
+function toggleHunter(i){ state.hunters[i].active = !state.hunters[i].active; renderHunters(); }
+function delHunter(i){ state.hunters.splice(i,1); renderHunters(); setStatus('✖ Usunięto z listy. Kliknij 💾 ZAPISZ, aby wysłać zmianę.'); }
+function addHunter(){
+  try{
+    var b=el('brand').value, m=el('model').value, g=el('gearbox').value, c=el('cond').value, s=el('seller').value;
+    var o = {};
+    o.name = (b+(m!=='all'?' '+m:'')).trim()+(el('pto').value?' do '+el('pto').value+' zł':'')+(c==='ok'?' bez wypadku':'');
+    o.portal = el('hportal').value;
+    o.keyword = (b+(m!=='all'?' '+m:'')).toLowerCase()+(g==='manual'?' manual':g==='automatic'?' automat':'');
+    if(el('pfrom').value) o.price_from = parseInt(el('pfrom').value,10);
+    if(el('pto').value) o.price_to = parseInt(el('pto').value,10);
+    if(el('yfrom').value) o.year_from = parseInt(el('yfrom').value,10);
+    if(el('yto').value) o.year_to = parseInt(el('yto').value,10);
+    if(c==='damaged') o.damaged = 'yes';
+    if(c==='ok') o.damaged = 'no';
+    if(s!=='all') o.seller_type = s;
+    o.active = true;
+    state.hunters = state.hunters||[];
+    state.hunters.push(o);
+    renderHunters();
+    setStatus('➕ Dodano do listy. Kliknij 💾 ZAPISZ do GitHub, żeby bot przejął!');
+  }catch(e){ setStatus('⚠️ addHunter: '+e); }
+}
+function ghToken(){ return lsGet('ghtoken',''); }
+function saveToken(){
+  try{
+    lsSet('ghtoken', el('ghtokenInput').value.trim());
+    el('tokenRow').style.display = 'none';
+    setStatus('🔑 Token zapisany TYLKO na tym urządzeniu. Wysyłam kryteria...');
+    saveHunters();
+  }catch(e){ setStatus('⚠️ token: '+e); }
+}
+function saveHunters(){
+  try{
+    var tok = ghToken();
+    if(!tok){ el('tokenRow').style.display = 'block'; setStatus('🔑 Jednorazowo wklej token GitHub (instrukcja w niebieskim polu) i kliknij 💾 ponownie.'); return; }
+    var json = JSON.stringify(state.hunters||[], null, 2);
+    var b64 = btoa(unescape(encodeURIComponent(json)));
+    setStatus('💾 Zapisuję hunters.json w repo...');
+    fetch('https://api.github.com/repos/'+REPO+'/contents/hunters.json',
+      {headers:{'Authorization':'Bearer '+tok,'Accept':'application/vnd.github+json'}})
+      .then(function(r){ return r.json().then(function(j){ if(!r.ok) throw new Error(j.message||r.status); return j; }); })
+      .then(function(cur){
+        return fetch('https://api.github.com/repos/'+REPO+'/contents/hunters.json',
+          {method:'PUT',headers:{'Authorization':'Bearer '+tok,'Accept':'application/vnd.github+json','Content-Type':'application/json'},
+           body:JSON.stringify({message:'Kryteria z aplikacji [skip ci]',content:b64,sha:cur.sha})});
+      })
+      .then(function(r){ return r.json().then(function(j){ if(!r.ok) throw new Error(j.message||r.status); return j; }); })
+      .then(function(){ setStatus('✅ Zapisano w repo! Bot przejmie kryteria w ~5 min (albo 🚀 teraz).'); loadHunters(); })
+      .catch(function(e){ setStatus('❌ Zapis nie udał się: '+e+' — sprawdź token (Contents: Read and write dla repo szperacz).'); });
+  }catch(e){ setStatus('⚠️ saveHunters: '+e); }
+}
+function runBotNow(){
+  try{
+    var tok = ghToken();
+    if(!tok){ el('tokenRow').style.display = 'block'; setStatus('🔑 Najpierw wklej token.'); return; }
+    setStatus('🚀 Odpalam bota...');
+    fetch('https://api.github.com/repos/'+REPO+'/actions/workflows/bot.yml/dispatches',
+      {method:'POST',headers:{'Authorization':'Bearer '+tok,'Accept':'application/vnd.github+json','Content-Type':'application/json'},
+       body:JSON.stringify({ref:'main'})})
+      .then(function(r){ if(r.status===204){ setStatus('🚀 Bot odpalony! Sprawdź Telegram za ~30-60 s.'); } else { return r.json().then(function(j){ throw new Error(j.message||r.status); }); } })
+      .catch(function(e){ setStatus('❌ Run bota: '+e); });
+  }catch(e){ setStatus('⚠️ runBotNow: '+e); }
+}
+function makeHunter(){
+  try{
+    var b = el('brand').value, m = el('model').value, g = el('gearbox').value;
+    var c = el('cond').value, s = el('seller').value;
+    var o = {};
+    o.name = (b + (m!=='all' ? ' '+m : '')).trim()
+      + (el('yfrom').value || el('yto').value ? ' '+(el('yfrom').value||'...')+'-'+(el('yto').value||'...') : '')
+      + (el('pto').value ? ' do '+el('pto').value+' zł' : '')
+      + (s==='private' ? ' prywatne' : '')
+      + (c==='ok' ? ' BEZ wypadku' : c==='damaged' ? ' uszkodzone' : '');
+    o.portal = el('hportal').value;
+    o.keyword = (b + (m!=='all' ? ' '+m : '')).toLowerCase();
+    if(g==='manual') o.keyword += ' manual';
+    if(g==='automatic') o.keyword += ' automat';
+    if(el('pfrom').value) o.price_from = parseInt(el('pfrom').value,10);
+    if(el('pto').value) o.price_to = parseInt(el('pto').value,10);
+    if(el('yfrom').value) o.year_from = parseInt(el('yfrom').value,10);
+    if(el('yto').value) o.year_to = parseInt(el('yto').value,10);
+    if(c==='damaged') o.damaged = 'yes';
+    if(c==='ok') o.damaged = 'no';
+    if(s!=='all') o.seller_type = s;
+    o.active = true;
+    var json = JSON.stringify([o], null, 2);
+    el('hunterOut').value = json;
+    try{ navigator.clipboard.writeText(json); setStatus('📋 Skopiowano! Teraz wklej do hunters.json (usuń starą treść).'); }
+    catch(e){ setStatus('📋 JSON gotowy w polu — zaznacz tekst i skopiuj.'); }
+  }catch(e){ setStatus('⚠️ generator: '+e); }
+}
 function tab(a){
   try{
     var as = document.querySelectorAll('nav a'); for(var i=0;i<as.length;i++) as[i].className='';
@@ -381,16 +547,17 @@ function tab(a){
     el('soundBtn').textContent = state.sound ? '🔔' : '🔕';
     el('city').value = lsGet('city','wroclaw');
     el('city').addEventListener('change', function(){ lsSet('city', el('city').value); buildUrls(); });
-    ['brand','model','seller','gearbox','radius','pfrom','pto'].forEach(function(id){ el(id).addEventListener('change', buildUrls); });
+    ['brand','model','seller','gearbox','radius','pfrom','pto','yfrom','yto','cond'].forEach(function(id){ el(id).addEventListener('change', buildUrls); });
     el('offersGrid').addEventListener('click', function(e){
       var b = e.target.closest ? e.target.closest('.eye') : null;
       if(b){ e.preventDefault(); openModal(parseInt(b.getAttribute('data-i'),10)); }
     });
     renderOffers(SAMPLES);
     buildUrls();
+    loadHunters();
     if('serviceWorker' in navigator){ navigator.serviceWorker.register('sw.js').catch(function(){}); }
   }catch(e){ setStatus('⚠️ init: '+e); }
 })();
 </script>
-<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a43b50c21b88dcae',t:'MTc5MDg1NjExNQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</body>
 </html>
