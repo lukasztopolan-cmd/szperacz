@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "name": "Skoda Superb do 20000 zł prywatne",
+    "portal": "both",
+    "keyword": "skoda superb automat",
+    "price_to": 20000,
+    "seller_type": "private",
+    "active": true
+  }
+]
