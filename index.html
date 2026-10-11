@@ -108,7 +108,7 @@ nav a.on{color:#ff3b30}
 </section>
 
 <section id="oferty">
-  <h2>🔥 Oferty — kliknij kartę aby otworzyć, 👁 podgląd</h2>
+  <h2>🔥 Oferty — kliknij kartę aby otworzyć, 👁 podgląd • 🔄 auto co 5 min</h2>
   <div class="btnrow" style="margin:0 0 10px">
     <button class="btn small" onclick="loadReal()">📥 Pobierz prawdziwe oferty</button>
     <button class="btn small" onclick="beep()">🔊 Test dźwięku</button>
@@ -177,7 +177,7 @@ nav a.on{color:#ff3b30}
 
 <script>
 'use strict';
-var state = { lat: null, lon: null, sound: true, offers: [], hunters: [] };
+var state = { lat: null, lon: null, sound: true, offers: [], hunters: [], known: {}, loadedOnce: false };
 var REPO = 'lukasztopolan-cmd/szperacz';
 
 var BRANDS = {
@@ -390,19 +390,27 @@ function toggleSound(){
 }
 
 /* ---- prawdziwe oferty z repo (zapisywane przez bota) ---- */
-function loadReal(){
-  setStatus('📥 Pobieram prawdziwe oferty z GitHub...');
+function loadReal(auto){
   try{
-    fetch('https://raw.githubusercontent.com/lukasztopolan-cmd/szperacz/main/offers.json',{cache:'no-store'})
+    if(!auto) setStatus('📥 Pobieram prawdziwe oferty z GitHub...');
+    fetch('https://raw.githubusercontent.com/'+REPO+'/main/offers.json',{cache:'no-store'})
       .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
       .then(function(list){
-        if(!list || !list.length){ setStatus('⚠️ offers.json pusty — bot jeszcze nie zapisał ofert'); return; }
+        if(!list || !list.length){ if(!auto) setStatus('⚠️ offers.json pusty — bot jeszcze nie zapisał ofert'); return; }
+        var fresh = 0, i;
+        for(i=0;i<list.length;i++){ if(!state.known[list[i].id]) fresh++; }
+        var first = !state.loadedOnce;
+        state.loadedOnce = true;
+        var ids = {};
+        for(i=0;i<list.length;i++) ids[list[i].id] = 1;
+        state.known = ids;
         renderOffers(list.slice(0,20));
-        setStatus('✅ Pobrano '+list.length+' prawdziwych ofert!');
-        beep();
+        if(first) setStatus('✅ Prawdziwe oferty: '+list.length+' | 🔄 auto-odświeżanie co 5 min');
+        else if(fresh>0){ setStatus('🔔 NOWE oferty: '+fresh+'!'); beep(); }
+        else setStatus('🔄 Odświeżono '+new Date().toLocaleTimeString()+' — brak nowych');
       })
-      .catch(function(e){ setStatus('⚠️ Brak offers.json w repo ('+e.message+') — bot zapisze je przy najbliższym runie'); });
-  }catch(e){ setStatus('⚠️ fetch błąd'); }
+      .catch(function(e){ if(!auto) setStatus('⚠️ Brak offers.json w repo ('+e.message+') — bot zapisze przy najbliższym runie'); });
+  }catch(e){ if(!auto) setStatus('⚠️ fetch błąd'); }
 }
 
 /* ---- modal ---- */
@@ -582,6 +590,8 @@ function tab(a){
     applyPortals();
     buildUrls();
     loadHunters();
+    loadReal(true);
+    setInterval(function(){ loadReal(true); }, 300000); // auto-odświeżanie co 5 min
     if('serviceWorker' in navigator){ navigator.serviceWorker.register('sw.js').catch(function(){}); }
   }catch(e){ setStatus('⚠️ init: '+e); }
 })();
