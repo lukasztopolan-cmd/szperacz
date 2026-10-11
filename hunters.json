@@ -6,5 +6,13 @@
     "price_to": 20000,
     "seller_type": "private",
     "active": true
+  },
+  {
+    "name": "Volkswagen Arteon do 60000 zł prywatne",
+    "portal": "both",
+    "keyword": "volkswagen arteon automat",
+    "price_to": 60000,
+    "seller_type": "private",
+    "active": true
   }
 ]
