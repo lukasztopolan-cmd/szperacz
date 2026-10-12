@@ -56,7 +56,7 @@
   {
     "id": "olx_6IgWz4",
     "title": "Skoda Superb Samochód super utrzymany. Wszystko sprawne. Przeglądy w serwisie.",
-    "price": "15 999 zł",
+    "price": "15 199 zł",
     "url": "https://www.otomoto.pl/osobowe/oferta/skoda-superb-samochod-super-utrzymany-wszystko-sprawne-przeglady-w-serwisie-ID6IgWz4.html",
     "location": "",
     "portal": "OLX",
@@ -72,10 +72,19 @@
     "image": null
   },
   {
-    "id": "olx_6IeZya",
-    "title": "Skoda Superb Skoda Superb 2 2.0 TDI 170 KM 2011",
-    "price": "18 900 zł",
-    "url": "https://www.otomoto.pl/osobowe/oferta/skoda-superb-skoda-superb-2-2-0-tdi-170-km-2011-ID6IeZya.html",
+    "id": "olx_6IgRwN",
+    "title": "Skoda Superb Skoda Superb II 1.8TSI, automat",
+    "price": "16 900 zł",
+    "url": "https://www.otomoto.pl/osobowe/oferta/skoda-superb-skoda-superb-ii-1-8tsi-automat-ID6IgRwN.html",
+    "location": "",
+    "portal": "OLX",
+    "image": null
+  },
+  {
+    "id": "olx_6If4F5",
+    "title": "Skoda Superb Skoda Superb 1.8TSI 160KM 2012",
+    "price": "18 300 zł",
+    "url": "https://www.otomoto.pl/osobowe/oferta/skoda-superb-skoda-superb-1-8tsi-160km-2012-ID6If4F5.html",
     "location": "",
     "portal": "OLX",
     "image": null
@@ -90,19 +99,10 @@
     "image": null
   },
   {
-    "id": "olx_6IfqNq",
-    "title": "Skoda Superb Skoda Superb 2.0 TDI 170km _ Panorama _ HydroKlapa_",
-    "price": "15 900 zł",
-    "url": "https://www.otomoto.pl/osobowe/oferta/skoda-superb-skoda-superb-2-0-tdi-170km-panorama-hydroklapa-ID6IfqNq.html",
-    "location": "",
-    "portal": "OLX",
-    "image": null
-  },
-  {
-    "id": "olx_6IgRwN",
-    "title": "Skoda Superb Skoda Superb II 1.8TSI, automat",
-    "price": "16 900 zł",
-    "url": "https://www.otomoto.pl/osobowe/oferta/skoda-superb-skoda-superb-ii-1-8tsi-automat-ID6IgRwN.html",
+    "id": "olx_6IfDBv",
+    "title": "Skoda Superb Skoda superb  2.0 D. 170 koni automat",
+    "price": "8 500 zł",
+    "url": "https://www.otomoto.pl/osobowe/oferta/skoda-superb-skoda-superb-2-0-d-170-koni-automat-ID6IfDBv.html",
     "location": "",
     "portal": "OLX",
     "image": null
@@ -200,16 +200,16 @@
   {
     "id": "olx_6IepcZ",
     "title": "Volkswagen Caddy 4x4 Automat Bezwypadkowy 100% historii",
-    "price": "57 000 zł",
+    "price": "59 000 zł",
     "url": "https://www.otomoto.pl/osobowe/oferta/volkswagen-caddy-4x4-automat-bezwypadkowy-100-historii-ID6IepcZ.html",
     "location": "",
     "portal": "OLX",
-    "image": "https://ireland.apollo.olxcdn.com:443/v1/files/75couyjrys8c3-PL/image;s=150x160;q=50"
+    "image": "https://ireland.apollo.olxcdn.com:443/v1/files/5wl9hp80qgm73-PL/image;s=150x160;q=50"
   },
   {
     "id": "olx_6IgIG7",
     "title": "Volkswagen Golf 2.0 GTD 184 konie , automat DSG  ,",
-    "price": "39 900 zł",
+    "price": "38 500 zł",
     "url": "https://www.otomoto.pl/osobowe/oferta/volkswagen-golf-2-0-gtd-184-konie-automat-dsg-ID6IgIG7.html",
     "location": "",
     "portal": "OLX",
