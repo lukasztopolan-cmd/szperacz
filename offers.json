@@ -56,7 +56,7 @@
   {
     "id": "olx_1c2NwP",
     "title": "Skoda Superb 2.0 Tdi 170 koni 2011r",
-    "price": "20 000 zł",
+    "price": "19 999 zł",
     "url": "https://www.olx.pl/d/oferta/skoda-superb-2-0-tdi-170-koni-2011r-CID5-ID1c2NwP.html?search_reason=search%7Corganic",
     "location": "",
     "portal": "OLX",
@@ -136,7 +136,7 @@
   },
   {
     "id": "allegro_nakladki-na-pedaly-do-skoda-superb-2-oct",
-    "title": "Nakładki na pedały do Skoda Superb 2, Octavia 2 automat DSG130,00 złKup teraz120złSTAN: NOWYSprzedający: osoba prywatnaW",
+    "title": "Nakładki na pedały do Skoda Superb 2, Octavia 2 automat DSG-15%130,00 złKup teraz110złSTAN: NOWYSprzedający: osoba prywa",
     "price": "00 zł",
     "url": "https://allegrolokalnie.pl/oferta/nakladki-na-pedaly-do-skoda-superb-2-octavia-2-automat-dsg",
     "location": "",
@@ -162,15 +162,6 @@
     "image": null
   },
   {
-    "id": "olx_6IeYgL",
-    "title": "Seat Leon FV23% Salon PL II Właściciel ASO CarPlay LED 1.6TDI 4l/100km Seat Leon",
-    "price": "43 500 zł",
-    "url": "https://www.otomoto.pl/osobowe/oferta/seat-leon-fv23-salon-pl-ii-wlasciciel-aso-carplay-led-1-6tdi-4l-100km-seat-leon-ID6IeYgL.html",
-    "location": "",
-    "portal": "OLX",
-    "image": "https://ireland.apollo.olxcdn.com:443/v1/files/5d41blfq5lrp2-PL/image;s=150x160;q=50"
-  },
-  {
     "id": "olx_6IgUWW",
     "title": "Renault Clio Salon PL, 3Wł, BOGATE WYPOSAŻENIE 0,9TCe 90km Renault Clio 4 kombi ALU",
     "price": "19 900 zł",
@@ -178,6 +169,15 @@
     "location": "",
     "portal": "OLX",
     "image": "https://ireland.apollo.olxcdn.com:443/v1/files/8u46bzwyg2ci-PL/image;s=150x160;q=50"
+  },
+  {
+    "id": "olx_6IeYgL",
+    "title": "Seat Leon FV23% Salon PL II Właściciel ASO CarPlay LED 1.6TDI 4l/100km Seat Leon",
+    "price": "43 500 zł",
+    "url": "https://www.otomoto.pl/osobowe/oferta/seat-leon-fv23-salon-pl-ii-wlasciciel-aso-carplay-led-1-6tdi-4l-100km-seat-leon-ID6IeYgL.html",
+    "location": "",
+    "portal": "OLX",
+    "image": "https://ireland.apollo.olxcdn.com:443/v1/files/5d41blfq5lrp2-PL/image;s=150x160;q=50"
   },
   {
     "id": "olx_6Ii14l",
@@ -243,6 +243,15 @@
     "image": null
   },
   {
+    "id": "olx_6If3xN",
+    "title": "Volkswagen Arteon 1.5 TSI R-LINE LIFT Salon Polska",
+    "price": "55 900 zł",
+    "url": "https://www.otomoto.pl/osobowe/oferta/volkswagen-arteon-1-5-tsi-r-line-lift-salon-polska-ID6If3xN.html",
+    "location": "",
+    "portal": "OLX",
+    "image": null
+  },
+  {
     "id": "olx_6Ihqri",
     "title": "Volkswagen Jetta Automat DSG, benzynowy silnik, tempomat, isofix, niski przebieg",
     "price": "18 400 zł",
@@ -256,15 +265,6 @@
     "title": "Volkswagen Passat Vw Passat kombi 1.4 benzyna automat DSG",
     "price": "14 900 zł",
     "url": "https://www.otomoto.pl/osobowe/oferta/volkswagen-passat-vw-passat-kombi-1-4-benzyna-automat-dsg-ID6Ihhb7.html",
-    "location": "",
-    "portal": "OLX",
-    "image": null
-  },
-  {
-    "id": "olx_6Ii6vN",
-    "title": "Volkswagen Touran Automat • Świeżo z Niemiec • Bezwypadkowy • MEGA STAN!",
-    "price": "18 900 zł",
-    "url": "https://www.otomoto.pl/osobowe/oferta/volkswagen-touran-automat-swiezo-z-niemiec-bezwypadkowy-mega-stan-ID6Ii6vN.html",
     "location": "",
     "portal": "OLX",
     "image": null
