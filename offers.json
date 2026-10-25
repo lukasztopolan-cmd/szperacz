@@ -99,10 +99,10 @@
     "image": null
   },
   {
-    "id": "olx_11xFLA",
-    "title": "Śliczna skoda Superb 1 cała na części 2.8 V6 190KM automat",
-    "price": "5 zł",
-    "url": "https://www.olx.pl/d/oferta/sliczna-skoda-superb-1-cala-na-czesci-2-8-v6-190km-automat-CID5-ID11xFLA.html?search_reason=search%7Corganic",
+    "id": "olx_6I6Z1t",
+    "title": "Skoda Superb Skoda Superb 2.0 TDI Ambition DSG automatyczna skrzynia biegów hak",
+    "price": "18 500 zł",
+    "url": "https://www.otomoto.pl/osobowe/oferta/skoda-superb-skoda-superb-2-0-tdi-ambition-dsg-automatyczna-skrzynia-biegow-hak-ID6I6Z1t.html",
     "location": "",
     "portal": "OLX",
     "image": null
@@ -171,15 +171,6 @@
     "image": "https://ireland.apollo.olxcdn.com:443/v1/files/weazfagrbvdu2-PL/image;s=150x160;q=50"
   },
   {
-    "id": "olx_6IeYgL",
-    "title": "Seat Leon FV23% Salon PL II Właściciel ASO CarPlay LED 1.6TDI 4l/100km Seat Leon",
-    "price": "42 990 zł",
-    "url": "https://www.otomoto.pl/osobowe/oferta/seat-leon-fv23-salon-pl-ii-wlasciciel-aso-carplay-led-1-6tdi-4l-100km-seat-leon-ID6IeYgL.html",
-    "location": "",
-    "portal": "OLX",
-    "image": "https://ireland.apollo.olxcdn.com:443/v1/files/mbpkwvia8pt33-PL/image;s=150x160;q=50"
-  },
-  {
     "id": "olx_6IgUWW",
     "title": "Renault Clio Salon PL, 3Wł, BOGATE WYPOSAŻENIE 0,9TCe 90km Renault Clio 4 kombi ALU",
     "price": "19 900 zł",
@@ -187,6 +178,15 @@
     "location": "",
     "portal": "OLX",
     "image": "https://ireland.apollo.olxcdn.com:443/v1/files/8u46bzwyg2ci-PL/image;s=150x160;q=50"
+  },
+  {
+    "id": "olx_6IeYgL",
+    "title": "Seat Leon FV23% Salon PL II Właściciel ASO CarPlay LED 1.6TDI 4l/100km Seat Leon",
+    "price": "42 990 zł",
+    "url": "https://www.otomoto.pl/osobowe/oferta/seat-leon-fv23-salon-pl-ii-wlasciciel-aso-carplay-led-1-6tdi-4l-100km-seat-leon-ID6IeYgL.html",
+    "location": "",
+    "portal": "OLX",
+    "image": "https://ireland.apollo.olxcdn.com:443/v1/files/mbpkwvia8pt33-PL/image;s=150x160;q=50"
   },
   {
     "id": "olx_6Ii14l",
@@ -207,6 +207,15 @@
     "image": "https://ireland.apollo.olxcdn.com:443/v1/files/hgewsyhrtsut-PL/image;s=150x160;q=50"
   },
   {
+    "id": "olx_6IbFFj",
+    "title": "Volkswagen Arteon Super Stan*Serwis*Kamera*Nawigacja*VAT 23%*Polecam*Okazja!!!",
+    "price": "59 800 zł",
+    "url": "https://www.otomoto.pl/osobowe/oferta/volkswagen-arteon-super-stanserwiskameranawigacjavat-23-polecamokazja-ID6IbFFj.html",
+    "location": "",
+    "portal": "OLX",
+    "image": null
+  },
+  {
     "id": "olx_6Ih6MR",
     "title": "Volkswagen Arteon 2.0 TSI 190KM Elegance DSG Salon Polska",
     "price": "29 900 zł",
@@ -220,24 +229,6 @@
     "title": "Volkswagen Arteon Pierwszy właściciel, Salon Polska, oryginalny lakier",
     "price": "59 800 zł",
     "url": "https://www.otomoto.pl/osobowe/oferta/volkswagen-arteon-pierwszy-wlasciciel-salon-polska-oryginalny-lakier-ID6IhLTF.html",
-    "location": "",
-    "portal": "OLX",
-    "image": null
-  },
-  {
-    "id": "olx_6IgIG7",
-    "title": "Volkswagen Golf 2.0 GTD 184 konie , automat DSG  ,",
-    "price": "38 500 zł",
-    "url": "https://www.otomoto.pl/osobowe/oferta/volkswagen-golf-2-0-gtd-184-konie-automat-dsg-ID6IgIG7.html",
-    "location": "",
-    "portal": "OLX",
-    "image": null
-  },
-  {
-    "id": "olx_6IbFFj",
-    "title": "Volkswagen Arteon Super Stan*Serwis*Kamera*Nawigacja*VAT 23%*Polecam*Okazja!!!",
-    "price": "59 800 zł",
-    "url": "https://www.otomoto.pl/osobowe/oferta/volkswagen-arteon-super-stanserwiskameranawigacjavat-23-polecamokazja-ID6IbFFj.html",
     "location": "",
     "portal": "OLX",
     "image": null
@@ -265,6 +256,15 @@
     "title": "Volkswagen Jetta Automat DSG, benzynowy silnik, tempomat, isofix, niski przebieg",
     "price": "18 300 zł",
     "url": "https://www.otomoto.pl/osobowe/oferta/volkswagen-jetta-automat-dsg-benzynowy-silnik-tempomat-isofix-niski-przebieg-ID6Ihqri.html",
+    "location": "",
+    "portal": "OLX",
+    "image": null
+  },
+  {
+    "id": "olx_6Ii6Oh",
+    "title": "Volkswagen Polo Automat niskie spalanie opony lato zima",
+    "price": "39 900 zł",
+    "url": "https://www.otomoto.pl/osobowe/oferta/volkswagen-polo-automat-niskie-spalanie-opony-lato-zima-ID6Ii6Oh.html",
     "location": "",
     "portal": "OLX",
     "image": null
