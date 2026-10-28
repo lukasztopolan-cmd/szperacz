@@ -90,19 +90,19 @@
     "image": null
   },
   {
-    "id": "olx_6Hr8Mn",
-    "title": "Skoda Superb Skoda Superb 2.0 TDI DSG 2012 – Automat, Hak, Elektryczny bagażnik",
-    "price": "19 500 zł",
-    "url": "https://www.otomoto.pl/osobowe/oferta/skoda-superb-skoda-superb-2-0-tdi-dsg-2012-automat-hak-elektryczny-bagaznik-ID6Hr8Mn.html",
+    "id": "olx_6Iil5o",
+    "title": "Skoda Superb Rachunki za 20 tys. bardzo ZADBANA, ŁADNA, super SPRAWNA, mega okazja",
+    "price": "19 300 zł",
+    "url": "https://www.otomoto.pl/osobowe/oferta/skoda-superb-rachunki-za-20-tys-bardzo-zadbana-ladna-super-sprawna-mega-okazja-ID6Iil5o.html",
     "location": "",
     "portal": "OLX",
     "image": null
   },
   {
-    "id": "olx_6IgRwN",
-    "title": "Skoda Superb Skoda Superb II 1.8TSI, automat",
-    "price": "16 500 zł",
-    "url": "https://www.otomoto.pl/osobowe/oferta/skoda-superb-skoda-superb-ii-1-8tsi-automat-ID6IgRwN.html",
+    "id": "olx_6IgsaJ",
+    "title": "Skoda Superb Škoda Superb 2.0 TDI 140 KM | DSG | 4x4 | 2011 | Kombi",
+    "price": "17 900 zł",
+    "url": "https://www.otomoto.pl/osobowe/oferta/skoda-superb-skoda-superb-2-0-tdi-140-km-dsg-4x4-2011-kombi-ID6IgsaJ.html",
     "location": "",
     "portal": "OLX",
     "image": null
@@ -162,15 +162,6 @@
     "image": null
   },
   {
-    "id": "olx_6IgUWW",
-    "title": "Renault Clio Salon PL, 3Wł, BOGATE WYPOSAŻENIE 0,9TCe 90km Renault Clio 4 kombi ALU",
-    "price": "19 900 zł",
-    "url": "https://www.otomoto.pl/osobowe/oferta/renault-clio-salon-pl-3wl-bogate-wyposazenie-0-9tce-90km-renault-clio-4-kombi-alu-ID6IgUWW.html",
-    "location": "",
-    "portal": "OLX",
-    "image": "https://ireland.apollo.olxcdn.com:443/v1/files/8u46bzwyg2ci-PL/image;s=150x160;q=50"
-  },
-  {
     "id": "olx_6IeYgL",
     "title": "Seat Leon FV23% Salon PL II Właściciel ASO CarPlay LED 1.6TDI 4l/100km Seat Leon",
     "price": "42 500 zł",
@@ -187,6 +178,15 @@
     "location": "",
     "portal": "OLX",
     "image": "https://ireland.apollo.olxcdn.com:443/v1/files/weazfagrbvdu2-PL/image;s=150x160;q=50"
+  },
+  {
+    "id": "olx_6IgUWW",
+    "title": "Renault Clio Salon PL, 3Wł, BOGATE WYPOSAŻENIE 0,9TCe 90km Renault Clio 4 kombi ALU",
+    "price": "19 900 zł",
+    "url": "https://www.otomoto.pl/osobowe/oferta/renault-clio-salon-pl-3wl-bogate-wyposazenie-0-9tce-90km-renault-clio-4-kombi-alu-ID6IgUWW.html",
+    "location": "",
+    "portal": "OLX",
+    "image": "https://ireland.apollo.olxcdn.com:443/v1/files/8u46bzwyg2ci-PL/image;s=150x160;q=50"
   },
   {
     "id": "olx_6Ihkey",
@@ -243,18 +243,9 @@
     "image": null
   },
   {
-    "id": "olx_6IfbaS",
-    "title": "Volkswagen Arteon 2.0 TSI | DSG | LED | Lekko uszkodzony | 2020 | PL",
-    "price": "33 333 zł",
-    "url": "https://www.otomoto.pl/osobowe/oferta/volkswagen-arteon-2-0-tsi-dsg-led-lekko-uszkodzony-2020-pl-ID6IfbaS.html",
-    "location": "",
-    "portal": "OLX",
-    "image": null
-  },
-  {
     "id": "olx_6Ihqri",
     "title": "Volkswagen Jetta Automat DSG, benzynowy silnik, tempomat, isofix, niski przebieg",
-    "price": "18 000 zł",
+    "price": "17 800 zł",
     "url": "https://www.otomoto.pl/osobowe/oferta/volkswagen-jetta-automat-dsg-benzynowy-silnik-tempomat-isofix-niski-przebieg-ID6Ihqri.html",
     "location": "",
     "portal": "OLX",
@@ -265,6 +256,15 @@
     "title": "Volkswagen Arteon Pierwszy właściciel, Salon Polska, oryginalny lakier",
     "price": "59 800 zł",
     "url": "https://www.otomoto.pl/osobowe/oferta/volkswagen-arteon-pierwszy-wlasciciel-salon-polska-oryginalny-lakier-ID6IhLTF.html",
+    "location": "",
+    "portal": "OLX",
+    "image": null
+  },
+  {
+    "id": "olx_6IfbaS",
+    "title": "Volkswagen Arteon 2.0 TSI | DSG | LED | Lekko uszkodzony | 2020 | PL",
+    "price": "33 333 zł",
+    "url": "https://www.otomoto.pl/osobowe/oferta/volkswagen-arteon-2-0-tsi-dsg-led-lekko-uszkodzony-2020-pl-ID6IfbaS.html",
     "location": "",
     "portal": "OLX",
     "image": null
