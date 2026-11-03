@@ -9,6 +9,15 @@
     "image": "https://ireland.apollo.olxcdn.com:443/v1/files/01eucggngnn9-PL/image;s=150x160;q=50"
   },
   {
+    "id": "olx_11xFLA",
+    "title": "Śliczna skoda Superb 1 cała na części 2.8 V6 190KM automat",
+    "price": "5 zł",
+    "url": "https://www.olx.pl/d/oferta/sliczna-skoda-superb-1-cala-na-czesci-2-8-v6-190km-automat-CID5-ID11xFLA.html?search_reason=search%7Cpromoted",
+    "location": "",
+    "portal": "OLX",
+    "image": "https://ireland.apollo.olxcdn.com:443/v1/files/2zipo58p4d4j1-PL/image;s=150x160;q=50"
+  },
+  {
     "id": "olx_NzCWc",
     "title": "Skoda superb 2.5 V6 TDI automat 9152 skóra części!",
     "price": "10 zł",
@@ -16,15 +25,6 @@
     "location": "",
     "portal": "OLX",
     "image": "https://ireland.apollo.olxcdn.com:443/v1/files/6b249we0bxi12-PL/image;s=150x160;q=50"
-  },
-  {
-    "id": "olx_Ukw75",
-    "title": "Skoda superb 1 cała na części 2.5 V6 TDI automat lakier 9102",
-    "price": "5 zł",
-    "url": "https://www.olx.pl/d/oferta/skoda-superb-1-cala-na-czesci-2-5-v6-tdi-automat-lakier-9102-CID5-IDUkw75.html?search_reason=search%7Cpromoted",
-    "location": "",
-    "portal": "OLX",
-    "image": "https://ireland.apollo.olxcdn.com:443/v1/files/0dlwouhkv3o42-PL/image;s=150x160;q=50"
   },
   {
     "id": "olx_6HUHWL",
@@ -45,19 +45,19 @@
     "image": "https://ireland.apollo.olxcdn.com:443/v1/files/8iqznlalar8w1-PL/image;s=150x160;q=50"
   },
   {
-    "id": "olx_6IhPPQ",
-    "title": "Skoda Superb 2.0 TDI 140KM Automat DSG Grzane Fotele z Pamięcią Navi Bi-Xenon 2011",
-    "price": "19 900 zł",
-    "url": "https://www.otomoto.pl/osobowe/oferta/skoda-superb-2-0-tdi-140km-automat-dsg-grzane-fotele-z-pamiecia-navi-bi-xenon-2011-ID6IhPPQ.html",
+    "id": "olx_6Ihze3",
+    "title": "Skoda Superb Skoda Superb 1.9 130km Automat Full Skóra Banan",
+    "price": "10 500 zł",
+    "url": "https://www.otomoto.pl/osobowe/oferta/skoda-superb-skoda-superb-1-9-130km-automat-full-skora-banan-ID6Ihze3.html",
     "location": "",
     "portal": "OLX",
     "image": null
   },
   {
-    "id": "olx_6Ihze3",
-    "title": "Skoda Superb Skoda Superb 1.9 130km Automat Full Skóra Banan",
-    "price": "10 500 zł",
-    "url": "https://www.otomoto.pl/osobowe/oferta/skoda-superb-skoda-superb-1-9-130km-automat-full-skora-banan-ID6Ihze3.html",
+    "id": "olx_6IhPPQ",
+    "title": "Skoda Superb 2.0 TDI 140KM Automat DSG Grzane Fotele z Pamięcią Navi Bi-Xenon 2011",
+    "price": "19 900 zł",
+    "url": "https://www.otomoto.pl/osobowe/oferta/skoda-superb-2-0-tdi-140km-automat-dsg-grzane-fotele-z-pamiecia-navi-bi-xenon-2011-ID6IhPPQ.html",
     "location": "",
     "portal": "OLX",
     "image": null
@@ -90,19 +90,19 @@
     "image": null
   },
   {
-    "id": "olx_6Iiq72",
-    "title": "Skoda Superb 2.0 TDI 140KM 2010r Super Stan Bezwypadkowy",
-    "price": "14 999 zł",
-    "url": "https://www.otomoto.pl/osobowe/oferta/skoda-superb-2-0-tdi-140km-2010r-super-stan-bezwypadkowy-ID6Iiq72.html",
+    "id": "olx_6Ii6vh",
+    "title": "Skoda Superb 1-szy właściciel stan bdb nawigacja dsg serwis",
+    "price": "18 900 zł",
+    "url": "https://www.otomoto.pl/osobowe/oferta/skoda-superb-1-szy-wlasciciel-stan-bdb-nawigacja-dsg-serwis-ID6Ii6vh.html",
     "location": "",
     "portal": "OLX",
     "image": null
   },
   {
-    "id": "olx_6Ii6vh",
-    "title": "Skoda Superb 1-szy właściciel stan bdb nawigacja dsg serwis",
-    "price": "18 900 zł",
-    "url": "https://www.otomoto.pl/osobowe/oferta/skoda-superb-1-szy-wlasciciel-stan-bdb-nawigacja-dsg-serwis-ID6Ii6vh.html",
+    "id": "olx_6IgYMF",
+    "title": "Skoda Superb 1,6 tdi 120 koni automat",
+    "price": "16 900 zł",
+    "url": "https://www.otomoto.pl/osobowe/oferta/skoda-superb-1-6-tdi-120-koni-automat-ID6IgYMF.html",
     "location": "",
     "portal": "OLX",
     "image": null
@@ -254,7 +254,7 @@
   {
     "id": "olx_6Ih6MR",
     "title": "Volkswagen Arteon 2.0 TSI 190KM Elegance DSG Salon Polska",
-    "price": "27 900 zł",
+    "price": "27 000 zł",
     "url": "https://www.otomoto.pl/osobowe/oferta/volkswagen-arteon-2-0-tsi-190km-elegance-dsg-salon-polska-ID6Ih6MR.html",
     "location": "",
     "portal": "OLX",
