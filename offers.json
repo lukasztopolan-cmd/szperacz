@@ -216,15 +216,6 @@
     "image": null
   },
   {
-    "id": "olx_6IhLTF",
-    "title": "Volkswagen Arteon Pierwszy właściciel, Salon Polska, oryginalny lakier",
-    "price": "59 800 zł",
-    "url": "https://www.otomoto.pl/osobowe/oferta/volkswagen-arteon-pierwszy-wlasciciel-salon-polska-oryginalny-lakier-ID6IhLTF.html",
-    "location": "",
-    "portal": "OLX",
-    "image": null
-  },
-  {
     "id": "olx_6Iii9E",
     "title": "Volkswagen Arteon Piękny Arteon R-line bogata wersja cesja leasingu odstępne 59 tys",
     "price": "59 900 zł",
@@ -234,10 +225,10 @@
     "image": null
   },
   {
-    "id": "olx_6IiOTM",
-    "title": "Volkswagen Transporter  2.0 TDI 150 KM DSG Automat Brygadowy 5 Osobowy",
-    "price": "55 000 zł",
-    "url": "https://www.otomoto.pl/dostawcze/oferta/volkswagen-transporter-2-0-tdi-150-km-dsg-automat-brygadowy-5-osobowy-ID6IiOTM.html",
+    "id": "olx_6IhLTF",
+    "title": "Volkswagen Arteon Pierwszy właściciel, Salon Polska, oryginalny lakier",
+    "price": "59 800 zł",
+    "url": "https://www.otomoto.pl/osobowe/oferta/volkswagen-arteon-pierwszy-wlasciciel-salon-polska-oryginalny-lakier-ID6IhLTF.html",
     "location": "",
     "portal": "OLX",
     "image": null
@@ -256,6 +247,15 @@
     "title": "Volkswagen Sharan 2.0 D automat 7 osób panorama",
     "price": "46 900 zł",
     "url": "https://www.otomoto.pl/osobowe/oferta/volkswagen-sharan-2-0-d-automat-7-osob-panorama-ID6IjqFZ.html",
+    "location": "",
+    "portal": "OLX",
+    "image": null
+  },
+  {
+    "id": "olx_6IiTta",
+    "title": "Volkswagen Polo automat...",
+    "price": "44 800 zł",
+    "url": "https://www.otomoto.pl/osobowe/oferta/volkswagen-polo-automat-ID6IiTta.html",
     "location": "",
     "portal": "OLX",
     "image": null
