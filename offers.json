@@ -1,14 +1,5 @@
 [
   {
-    "id": "olx_6IjTL1",
-    "title": "Skoda Superb 2.0 tdi 170km Automat",
-    "price": "17 500 zł",
-    "url": "https://www.otomoto.pl/osobowe/oferta/skoda-superb-2-0-tdi-170km-automat-ID6IjTL1.html",
-    "location": "",
-    "portal": "OLX",
-    "image": "https://ireland.apollo.olxcdn.com:443/v1/files/y9oc8wtzutru2-PL/image;s=150x160;q=50"
-  },
-  {
     "id": "olx_1cGUd7",
     "title": "Skoda Superb 2008 2.0 Diesel Automat",
     "price": "9 900 zł",
@@ -16,6 +7,15 @@
     "location": "",
     "portal": "OLX",
     "image": "https://ireland.apollo.olxcdn.com:443/v1/files/01eucggngnn9-PL/image;s=150x160;q=50"
+  },
+  {
+    "id": "olx_6IjTL1",
+    "title": "Skoda Superb 2.0 tdi 170km Automat",
+    "price": "15 800 zł",
+    "url": "https://www.otomoto.pl/osobowe/oferta/skoda-superb-2-0-tdi-170km-automat-ID6IjTL1.html",
+    "location": "",
+    "portal": "OLX",
+    "image": "https://ireland.apollo.olxcdn.com:443/v1/files/nwpku8wk1drb-PL/image;s=150x160;q=50"
   },
   {
     "id": "olx_1deYKE",
@@ -63,6 +63,15 @@
     "image": null
   },
   {
+    "id": "olx_6IjUUZ",
+    "title": "Skoda Superb Automat,Bardzo dobrze wyposażona",
+    "price": "14 800 zł",
+    "url": "https://www.otomoto.pl/osobowe/oferta/skoda-superb-automat-bardzo-dobrze-wyposazona-ID6IjUUZ.html",
+    "location": "",
+    "portal": "OLX",
+    "image": null
+  },
+  {
     "id": "olx_6IhPPQ",
     "title": "Skoda Superb 2.0 TDI 140KM Automat DSG Grzane Fotele z Pamięcią Navi Bi-Xenon 2011",
     "price": "18 900 zł",
@@ -99,12 +108,12 @@
     "image": null
   },
   {
-    "id": "olx_1deuXD",
-    "title": "Skoda Superb I 2,5 TDI 2005 automat",
-    "price": "6 500 zł",
-    "url": "https://www.olx.pl/d/oferta/skoda-superb-i-2-5-tdi-2005-automat-CID5-ID1deuXD.html?search_reason=search%7Corganic",
+    "id": "allegro_skoda-superb-1-8tsi-160km-automat-1-8-be",
+    "title": "Skoda Superb 1,8TSI (160KM) Automat 1.8 Benzyna 160KMPrzebieg:310288 kmKlimatyzacja:automatyczna jednostrefowaKolor:czar",
+    "price": "14 500\n zł",
+    "url": "https://allegro.pl/ogloszenie/skoda-superb-1-8tsi-160km-automat-1-8-benzyna-160km-19122407486",
     "location": "",
-    "portal": "OLX",
+    "portal": "Allegro Lokalnie",
     "image": null
   },
   {
@@ -189,19 +198,19 @@
     "image": "https://ireland.apollo.olxcdn.com:443/v1/files/fcg232z3t1jn-PL/image;s=150x160;q=50"
   },
   {
-    "id": "olx_6IgIG7",
-    "title": "Volkswagen Golf 2.0 GTD 184 konie , automat DSG  ,",
-    "price": "42 900 zł",
-    "url": "https://www.otomoto.pl/osobowe/oferta/volkswagen-golf-2-0-gtd-184-konie-automat-dsg-ID6IgIG7.html",
-    "location": "",
-    "portal": "OLX",
-    "image": "https://ireland.apollo.olxcdn.com:443/v1/files/zqde6zgshuu32-PL/image;s=150x160;q=50"
-  },
-  {
     "id": "olx_6IfbaS",
     "title": "Volkswagen Arteon 2.0 TSI | DSG | LED | Lekko uszkodzony | 2020 | PL",
     "price": "31 999 zł",
     "url": "https://www.otomoto.pl/osobowe/oferta/volkswagen-arteon-2-0-tsi-dsg-led-lekko-uszkodzony-2020-pl-ID6IfbaS.html",
+    "location": "",
+    "portal": "OLX",
+    "image": "https://ireland.apollo.olxcdn.com:443/v1/files/az8c5n4e7n773-PL/image;s=150x160;q=50"
+  },
+  {
+    "id": "olx_6IiTta",
+    "title": "Volkswagen Polo automat...",
+    "price": "44 800 zł",
+    "url": "https://www.otomoto.pl/osobowe/oferta/volkswagen-polo-automat-ID6IiTta.html",
     "location": "",
     "portal": "OLX",
     "image": null
@@ -252,10 +261,10 @@
     "image": null
   },
   {
-    "id": "olx_6IiTta",
-    "title": "Volkswagen Polo automat...",
-    "price": "44 800 zł",
-    "url": "https://www.otomoto.pl/osobowe/oferta/volkswagen-polo-automat-ID6IiTta.html",
+    "id": "olx_6IgIG7",
+    "title": "Volkswagen Golf 2.0 GTD 184 konie , automat DSG  ,",
+    "price": "42 900 zł",
+    "url": "https://www.otomoto.pl/osobowe/oferta/volkswagen-golf-2-0-gtd-184-konie-automat-dsg-ID6IgIG7.html",
     "location": "",
     "portal": "OLX",
     "image": null
