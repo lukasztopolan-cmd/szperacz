@@ -9,15 +9,6 @@
     "image": "https://ireland.apollo.olxcdn.com:443/v1/files/2jc4ctp92xxp1-PL/image;s=150x160;q=50"
   },
   {
-    "id": "olx_1cGUd7",
-    "title": "Skoda Superb 2008 2.0 Diesel Automat",
-    "price": "9 900 zł",
-    "url": "https://www.olx.pl/d/oferta/skoda-superb-2008-2-0-diesel-automat-CID5-ID1cGUd7.html?search_reason=search%7Cpromoted",
-    "location": "",
-    "portal": "OLX",
-    "image": "https://ireland.apollo.olxcdn.com:443/v1/files/01eucggngnn9-PL/image;s=150x160;q=50"
-  },
-  {
     "id": "olx_6IjTL1",
     "title": "Skoda Superb 2.0 tdi 170km Automat",
     "price": "14 500 zł",
@@ -27,13 +18,13 @@
     "image": "https://ireland.apollo.olxcdn.com:443/v1/files/psd6wa0xwd8w-PL/image;s=150x160;q=50"
   },
   {
-    "id": "olx_6Ijyjb",
-    "title": "Skoda Superb 2.0 TDI 4x4 Automat DSG Najbogatsza Wersja Wyposażenia Sprawna",
-    "price": "13 900 zł",
-    "url": "https://www.otomoto.pl/osobowe/oferta/skoda-superb-2-0-tdi-4x4-automat-dsg-najbogatsza-wersja-wyposazenia-sprawna-ID6Ijyjb.html",
+    "id": "olx_Ukw75",
+    "title": "Skoda superb 1 cała na części 2.5 V6 TDI automat lakier 9102",
+    "price": "5 zł",
+    "url": "https://www.olx.pl/d/oferta/skoda-superb-1-cala-na-czesci-2-5-v6-tdi-automat-lakier-9102-CID5-IDUkw75.html?search_reason=search%7Cpromoted",
     "location": "",
     "portal": "OLX",
-    "image": "https://ireland.apollo.olxcdn.com:443/v1/files/3qy5zcqsz6lk2-PL/image;s=150x160;q=50"
+    "image": "https://ireland.apollo.olxcdn.com:443/v1/files/0dlwouhkv3o42-PL/image;s=150x160;q=50"
   },
   {
     "id": "olx_6Ihze3",
@@ -43,6 +34,15 @@
     "location": "",
     "portal": "OLX",
     "image": "https://ireland.apollo.olxcdn.com:443/v1/files/e62tftz4ubrs-PL/image;s=150x160;q=50"
+  },
+  {
+    "id": "olx_6Ijyjb",
+    "title": "Skoda Superb 2.0 TDI 4x4 Automat DSG Najbogatsza Wersja Wyposażenia Sprawna",
+    "price": "13 900 zł",
+    "url": "https://www.otomoto.pl/osobowe/oferta/skoda-superb-2-0-tdi-4x4-automat-dsg-najbogatsza-wersja-wyposazenia-sprawna-ID6Ijyjb.html",
+    "location": "",
+    "portal": "OLX",
+    "image": "https://ireland.apollo.olxcdn.com:443/v1/files/3qy5zcqsz6lk2-PL/image;s=150x160;q=50"
   },
   {
     "id": "olx_1dhimF",
@@ -72,10 +72,19 @@
     "image": null
   },
   {
-    "id": "olx_6IjUUZ",
-    "title": "Skoda Superb Automat,Bardzo dobrze wyposażona",
-    "price": "14 800 zł",
-    "url": "https://www.otomoto.pl/osobowe/oferta/skoda-superb-automat-bardzo-dobrze-wyposazona-ID6IjUUZ.html",
+    "id": "olx_6IjVMh",
+    "title": "Skoda Superb Skoda Superb 2.5 TDI Automat – od 2020 r. w jednych rękach",
+    "price": "4 485 zł",
+    "url": "https://www.otomoto.pl/osobowe/oferta/skoda-superb-skoda-superb-2-5-tdi-automat-od-2020-r-w-jednych-rekach-ID6IjVMh.html",
+    "location": "",
+    "portal": "OLX",
+    "image": null
+  },
+  {
+    "id": "olx_6IjZrh",
+    "title": "Skoda Superb Skoda Superb 2.0TDI DSG",
+    "price": "16 500 zł",
+    "url": "https://www.otomoto.pl/osobowe/oferta/skoda-superb-skoda-superb-2-0tdi-dsg-ID6IjZrh.html",
     "location": "",
     "portal": "OLX",
     "image": null
@@ -92,17 +101,8 @@
   {
     "id": "olx_6IgsaJ",
     "title": "Skoda Superb Škoda Superb 2.0 TDI 140 KM | DSG | 4x4 | 2011 | Kombi",
-    "price": "16 900 zł",
+    "price": "16 500 zł",
     "url": "https://www.otomoto.pl/osobowe/oferta/skoda-superb-skoda-superb-2-0-tdi-140-km-dsg-4x4-2011-kombi-ID6IgsaJ.html",
-    "location": "",
-    "portal": "OLX",
-    "image": null
-  },
-  {
-    "id": "olx_6Hr8Mn",
-    "title": "Skoda Superb Skoda Superb 2.0 TDI DSG 2012 – Automat, Hak, Elektryczny bagażnik",
-    "price": "19 500 zł",
-    "url": "https://www.otomoto.pl/osobowe/oferta/skoda-superb-skoda-superb-2-0-tdi-dsg-2012-automat-hak-elektryczny-bagaznik-ID6Hr8Mn.html",
     "location": "",
     "portal": "OLX",
     "image": null
@@ -162,15 +162,6 @@
     "image": null
   },
   {
-    "id": "olx_6IeYgL",
-    "title": "Seat Leon FV23% Salon PL II Właściciel ASO CarPlay LED 1.6TDI 4l/100km Seat Leon",
-    "price": "44 650 zł",
-    "url": "https://www.otomoto.pl/osobowe/oferta/seat-leon-fv23-salon-pl-ii-wlasciciel-aso-carplay-led-1-6tdi-4l-100km-seat-leon-ID6IeYgL.html",
-    "location": "",
-    "portal": "OLX",
-    "image": "https://ireland.apollo.olxcdn.com:443/v1/files/elbvhtbyosgd-PL/image;s=150x160;q=50"
-  },
-  {
     "id": "olx_6IibDo",
     "title": "Volkswagen Passat Leon 3 ST 1.6TDI, SALON PL, II właściciel, ASO, po serwisie SUPER STAN",
     "price": "44 650 zł",
@@ -178,6 +169,15 @@
     "location": "",
     "portal": "OLX",
     "image": "https://ireland.apollo.olxcdn.com:443/v1/files/m7xigvwvpaq9-PL/image;s=150x160;q=50"
+  },
+  {
+    "id": "olx_6IeYgL",
+    "title": "Seat Leon FV23% Salon PL II Właściciel ASO CarPlay LED 1.6TDI 4l/100km Seat Leon",
+    "price": "44 650 zł",
+    "url": "https://www.otomoto.pl/osobowe/oferta/seat-leon-fv23-salon-pl-ii-wlasciciel-aso-carplay-led-1-6tdi-4l-100km-seat-leon-ID6IeYgL.html",
+    "location": "",
+    "portal": "OLX",
+    "image": "https://ireland.apollo.olxcdn.com:443/v1/files/elbvhtbyosgd-PL/image;s=150x160;q=50"
   },
   {
     "id": "olx_6IbFFj",
@@ -225,10 +225,10 @@
     "image": null
   },
   {
-    "id": "olx_6IiOTM",
-    "title": "Volkswagen Transporter  2.0 TDI 150 KM DSG Automat Brygadowy 5 Osobowy",
-    "price": "55 000 zł",
-    "url": "https://www.otomoto.pl/dostawcze/oferta/volkswagen-transporter-2-0-tdi-150-km-dsg-automat-brygadowy-5-osobowy-ID6IiOTM.html",
+    "id": "olx_6IjXYb",
+    "title": "Volkswagen Arteon 1.5 tsi DSG navi mały przebieg",
+    "price": "42 500 zł",
+    "url": "https://www.otomoto.pl/osobowe/oferta/volkswagen-arteon-1-5-tsi-dsg-navi-maly-przebieg-ID6IjXYb.html",
     "location": "",
     "portal": "OLX",
     "image": null
@@ -252,19 +252,19 @@
     "image": null
   },
   {
-    "id": "olx_6IhLTF",
-    "title": "Volkswagen Arteon Pierwszy właściciel, Salon Polska, oryginalny lakier",
-    "price": "59 800 zł",
-    "url": "https://www.otomoto.pl/osobowe/oferta/volkswagen-arteon-pierwszy-wlasciciel-salon-polska-oryginalny-lakier-ID6IhLTF.html",
+    "id": "olx_6IjqFZ",
+    "title": "Volkswagen Sharan 2.0 D automat 7 osób panorama",
+    "price": "46 900 zł",
+    "url": "https://www.otomoto.pl/osobowe/oferta/volkswagen-sharan-2-0-d-automat-7-osob-panorama-ID6IjqFZ.html",
     "location": "",
     "portal": "OLX",
     "image": null
   },
   {
-    "id": "olx_6IjqFZ",
-    "title": "Volkswagen Sharan 2.0 D automat 7 osób panorama",
-    "price": "46 900 zł",
-    "url": "https://www.otomoto.pl/osobowe/oferta/volkswagen-sharan-2-0-d-automat-7-osob-panorama-ID6IjqFZ.html",
+    "id": "olx_6IgIG7",
+    "title": "Volkswagen Golf 2.0 GTD 184 konie , automat DSG  ,",
+    "price": "42 900 zł",
+    "url": "https://www.otomoto.pl/osobowe/oferta/volkswagen-golf-2-0-gtd-184-konie-automat-dsg-ID6IgIG7.html",
     "location": "",
     "portal": "OLX",
     "image": null
