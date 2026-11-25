@@ -1,14 +1,5 @@
 [
   {
-    "id": "olx_1dkmX3",
-    "title": "Skoda Superb 2.5 TDI ... 14 lata w jednych rękach. AUTOMAT..",
-    "price": "8 400 zł",
-    "url": "https://www.olx.pl/d/oferta/skoda-superb-2-5-tdi-14-lata-w-jednych-rekach-automat-CID5-ID1dkmX3.html?search_reason=search%7Cpromoted",
-    "location": "",
-    "portal": "OLX",
-    "image": "https://ireland.apollo.olxcdn.com:443/v1/files/qdvmw4zszdav2-PL/image;s=150x160;q=50"
-  },
-  {
     "id": "olx_6IjTL1",
     "title": "Skoda Superb 2.0 tdi 170km Automat xenon webasto",
     "price": "13 500 zł",
@@ -18,13 +9,22 @@
     "image": "https://ireland.apollo.olxcdn.com:443/v1/files/1oxrwobkxihq-PL/image;s=150x160;q=50"
   },
   {
-    "id": "olx_15UCW8",
-    "title": "Skrzynia automat 2.8 V6 Skoda, Passat EZY niski przebieg",
-    "price": "1 500 zł",
-    "url": "https://www.olx.pl/d/oferta/skrzynia-automat-2-8-v6-skoda-passat-ezy-niski-przebieg-CID5-ID15UCW8.html?search_reason=search%7Cpromoted",
+    "id": "olx_1dkmX3",
+    "title": "Skoda Superb 2.5 TDI ... 14 lata w jednych rękach. AUTOMAT..",
+    "price": "8 400 zł",
+    "url": "https://www.olx.pl/d/oferta/skoda-superb-2-5-tdi-14-lata-w-jednych-rekach-automat-CID5-ID1dkmX3.html?search_reason=search%7Cpromoted",
     "location": "",
     "portal": "OLX",
-    "image": "https://ireland.apollo.olxcdn.com:443/v1/files/og1ulxflq6iv3-PL/image;s=150x160;q=50"
+    "image": "https://ireland.apollo.olxcdn.com:443/v1/files/qdvmw4zszdav2-PL/image;s=150x160;q=50"
+  },
+  {
+    "id": "olx_13Bcv8",
+    "title": "Gałka zmiany biegów automat Skoda Superb 1",
+    "price": "450 zł",
+    "url": "https://www.olx.pl/d/oferta/galka-zmiany-biegow-automat-skoda-superb-1-CID5-ID13Bcv8.html?search_reason=search%7Cpromoted",
+    "location": "",
+    "portal": "OLX",
+    "image": "https://ireland.apollo.olxcdn.com:443/v1/files/alw9wfbrm5cc3-PL/image;s=150x160;q=50"
   },
   {
     "id": "olx_6Ihze3",
@@ -45,15 +45,6 @@
     "image": "https://ireland.apollo.olxcdn.com:443/v1/files/j7ougkdavfkg3-PL/image;s=150x160;q=50"
   },
   {
-    "id": "olx_6IkwoK",
-    "title": "Skoda Superb Skoda Superb 2.5 V6 TDI 163 KM Automat – Bogata wersja – Zadbany techn",
-    "price": "6 000 zł",
-    "url": "https://www.otomoto.pl/osobowe/oferta/skoda-superb-skoda-superb-2-5-v6-tdi-163-km-automat-bogata-wersja-zadbany-techn-ID6IkwoK.html",
-    "location": "",
-    "portal": "OLX",
-    "image": null
-  },
-  {
     "id": "olx_1dn2rA",
     "title": "SKODA SUPERB 2.0 TDI 170KM DSG Automat Półskóra Elektryczne Fotele DVD Nawigacja Xenon Zadbana 2008",
     "price": "19 900 zł",
@@ -63,10 +54,10 @@
     "image": null
   },
   {
-    "id": "olx_6IksyQ",
-    "title": "Skoda Superb 1.8turbo ! 150km ! Najlepszy silnik pod gaz! Bardzo ładna! wypo Zadban",
-    "price": "17 950 zł",
-    "url": "https://www.otomoto.pl/osobowe/oferta/skoda-superb-1-8turbo-150km-najlepszy-silnik-pod-gaz-bardzo-ladna-wypo-zadban-ID6IksyQ.html",
+    "id": "olx_6IkwoK",
+    "title": "Skoda Superb Skoda Superb 2.5 V6 TDI 163 KM Automat – Bogata wersja – Zadbany techn",
+    "price": "6 000 zł",
+    "url": "https://www.otomoto.pl/osobowe/oferta/skoda-superb-skoda-superb-2-5-v6-tdi-163-km-automat-bogata-wersja-zadbany-techn-ID6IkwoK.html",
     "location": "",
     "portal": "OLX",
     "image": null
@@ -94,6 +85,15 @@
     "title": "Skoda Superb Skoda SUPERB 2.0 TSI. Automat DSG, 2012 200KM",
     "price": "9 000 zł",
     "url": "https://www.otomoto.pl/osobowe/oferta/skoda-superb-skoda-superb-2-0-tsi-automat-dsg-2012-200km-ID6I7fMn.html",
+    "location": "",
+    "portal": "OLX",
+    "image": null
+  },
+  {
+    "id": "olx_6IjUUZ",
+    "title": "Skoda Superb Automat,Bardzo dobrze wyposażona",
+    "price": "14 800 zł",
+    "url": "https://www.otomoto.pl/osobowe/oferta/skoda-superb-automat-bardzo-dobrze-wyposazona-ID6IjUUZ.html",
     "location": "",
     "portal": "OLX",
     "image": null
@@ -207,6 +207,15 @@
     "image": "https://ireland.apollo.olxcdn.com:443/v1/files/41tzl1mr3zh83-PL/image;s=150x160;q=50"
   },
   {
+    "id": "olx_1dilnq",
+    "title": "Volkswagen Arteon 2017 2.0 Disel",
+    "price": "60 000 zł",
+    "url": "https://www.olx.pl/d/oferta/volkswagen-arteon-2017-2-0-disel-CID5-ID1dilnq.html?search_reason=search%7Corganic",
+    "location": "",
+    "portal": "OLX",
+    "image": null
+  },
+  {
     "id": "olx_6IjXYb",
     "title": "Volkswagen Arteon 1.5 tsi DSG navi mały przebieg",
     "price": "42 500 zł",
@@ -234,19 +243,10 @@
     "image": null
   },
   {
-    "id": "olx_1d9shB",
-    "title": "Wynajme VW arteon 2020r r line z silnikiem 2.0 tsi 280HP 4x4",
-    "price": "150 zł za dobę",
-    "url": "https://www.olx.pl/d/oferta/wynajme-vw-arteon-2020r-r-line-z-silnikiem-2-0-tsi-280hp-4x4-CID3018-ID1d9shB.html?search_reason=search%7Corganic",
-    "location": "",
-    "portal": "OLX",
-    "image": null
-  },
-  {
-    "id": "olx_19uC79",
-    "title": "Wynajem VW Arteon 2.0 diesel 2021r",
-    "price": "200 zł za dobę",
-    "url": "https://www.olx.pl/d/oferta/wynajem-vw-arteon-2-0-diesel-2021r-CID3018-ID19uC79.html?search_reason=search%7Corganic",
+    "id": "olx_1clXhj",
+    "title": "VW Arteon R-line części zderzak maska drzwi błotnik LC9X 2.0 tdi DFH UAX",
+    "price": "100 zł",
+    "url": "https://www.olx.pl/d/oferta/vw-arteon-r-line-czesci-zderzak-maska-drzwi-blotnik-lc9x-2-0-tdi-dfh-uax-CID5-ID1clXhj.html?search_reason=search%7Corganic",
     "location": "",
     "portal": "OLX",
     "image": null
