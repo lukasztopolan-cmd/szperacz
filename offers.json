@@ -54,10 +54,28 @@
     "image": null
   },
   {
+    "id": "olx_6IjVMh",
+    "title": "Skoda Superb Skoda Superb 2.5 TDI Automat – od 2020 r. w jednych rękach",
+    "price": "4 485 zł",
+    "url": "https://www.otomoto.pl/osobowe/oferta/skoda-superb-skoda-superb-2-5-tdi-automat-od-2020-r-w-jednych-rekach-ID6IjVMh.html",
+    "location": "",
+    "portal": "OLX",
+    "image": null
+  },
+  {
     "id": "olx_6I5tMh",
     "title": "Skoda Superb Superb 2.0 TDI 4x4 DSG Webasto",
     "price": "17 900 zł",
     "url": "https://www.otomoto.pl/osobowe/oferta/skoda-superb-superb-2-0-tdi-4x4-dsg-webasto-ID6I5tMh.html",
+    "location": "",
+    "portal": "OLX",
+    "image": null
+  },
+  {
+    "id": "olx_6IjUUZ",
+    "title": "Skoda Superb Automat,Bardzo dobrze wyposażona",
+    "price": "14 800 zł",
+    "url": "https://www.otomoto.pl/osobowe/oferta/skoda-superb-automat-bardzo-dobrze-wyposazona-ID6IjUUZ.html",
     "location": "",
     "portal": "OLX",
     "image": null
@@ -81,28 +99,10 @@
     "image": null
   },
   {
-    "id": "olx_6IjUUZ",
-    "title": "Skoda Superb Automat,Bardzo dobrze wyposażona",
-    "price": "14 800 zł",
-    "url": "https://www.otomoto.pl/osobowe/oferta/skoda-superb-automat-bardzo-dobrze-wyposazona-ID6IjUUZ.html",
-    "location": "",
-    "portal": "OLX",
-    "image": null
-  },
-  {
     "id": "olx_6Hr8Mn",
     "title": "Skoda Superb Skoda Superb 2.0 TDI DSG 2012 – Automat, Hak, Elektryczny bagażnik",
     "price": "19 500 zł",
     "url": "https://www.otomoto.pl/osobowe/oferta/skoda-superb-skoda-superb-2-0-tdi-dsg-2012-automat-hak-elektryczny-bagaznik-ID6Hr8Mn.html",
-    "location": "",
-    "portal": "OLX",
-    "image": null
-  },
-  {
-    "id": "olx_6IfBsw",
-    "title": "Skoda Superb Skoda Superb 2.0TDI 140KM",
-    "price": "14 900 zł",
-    "url": "https://www.otomoto.pl/osobowe/oferta/skoda-superb-skoda-superb-2-0tdi-140km-ID6IfBsw.html",
     "location": "",
     "portal": "OLX",
     "image": null
@@ -234,19 +234,19 @@
     "image": null
   },
   {
-    "id": "olx_1d9shB",
-    "title": "Wynajme VW arteon 2020r r line z silnikiem 2.0 tsi 280HP 4x4",
-    "price": "150 zł za dobę",
-    "url": "https://www.olx.pl/d/oferta/wynajme-vw-arteon-2020r-r-line-z-silnikiem-2-0-tsi-280hp-4x4-CID3018-ID1d9shB.html?search_reason=search%7Corganic",
+    "id": "olx_1clXhj",
+    "title": "VW Arteon R-line części zderzak maska drzwi błotnik LC9X 2.0 tdi DFH UAX",
+    "price": "100 zł",
+    "url": "https://www.olx.pl/d/oferta/vw-arteon-r-line-czesci-zderzak-maska-drzwi-blotnik-lc9x-2-0-tdi-dfh-uax-CID5-ID1clXhj.html?search_reason=search%7Corganic",
     "location": "",
     "portal": "OLX",
     "image": null
   },
   {
-    "id": "olx_1clXhj",
-    "title": "VW Arteon R-line części zderzak maska drzwi błotnik LC9X 2.0 tdi DFH UAX",
-    "price": "100 zł",
-    "url": "https://www.olx.pl/d/oferta/vw-arteon-r-line-czesci-zderzak-maska-drzwi-blotnik-lc9x-2-0-tdi-dfh-uax-CID5-ID1clXhj.html?search_reason=search%7Corganic",
+    "id": "olx_1d9shB",
+    "title": "Wynajme VW arteon 2020r r line z silnikiem 2.0 tsi 280HP 4x4",
+    "price": "150 zł za dobę",
+    "url": "https://www.olx.pl/d/oferta/wynajme-vw-arteon-2020r-r-line-z-silnikiem-2-0-tsi-280hp-4x4-CID3018-ID1d9shB.html?search_reason=search%7Corganic",
     "location": "",
     "portal": "OLX",
     "image": null
